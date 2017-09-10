@@ -9,9 +9,9 @@ use App\Http\Controllers\Controller;
 class EnrolController extends Controller {
 
     public function create(EnrolRequest $request) {
-        //dd($request->all());
         \Auth::user()->enrols()->sync($request->activities);
-        flash('Inscrição realizada com sucesso!')->success();
+        \App\Http\Controllers\Pagseguro\PagseguroController::checkout();
+        flash('Inscrição realizada com sucesso! Agora basta clickar no botão para efetuar o pagamento e garantir a sua vaga.')->success();
         return redirect()->back();
     }
 

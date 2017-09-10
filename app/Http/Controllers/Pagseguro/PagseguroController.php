@@ -7,20 +7,48 @@ use App\Http\Controllers\Controller;
 
 class PagseguroController extends Controller {
 
-    public function notification($information) {
-        dd($information);
-        
-        $code = \Input::get('transaction_id', null);
-        if ($code) {
-            $credentials = \PagSeguro::credentials()->get();
-            $transaction = \PagSeguro::transaction()->get($code, $credentials);
-            $information = $transaction->getInformation();
-            dd([
+    public static function notification($information) {        
+      \App\Pagseguro\Notification::updateOrCreate([
                 'code' => $information->getCode(),
                 'reference' => $information->getReference()
-            ]);
-        }
-        dd('sem transaction_id');
+      ]);
+      
+      $u = \App\User::find($information->getReference());
+      $u->pagseguro_status_code = $information->getStatus()->getCode();
+      $u->pagseguro_status_name = $information->getStatus()->getName();
+      $u->save();
     }
+  
+  public static function checkout(){
+    $data = [
+        'items' => [
+            [
+                'id' => '1',
+                'description' => 'Ingresso da Semana Tech',
+                'quantity' => '1',
+                'amount' => \App\Discount::total(),
+                'maxAge' => 86400 * 2, //86400 = 1 dia
+            ]
+        ],
+        'reference' => \Auth::user()->id,
+        'sender' => [
+            'email' => \Auth::user()->email,
+            'name' => \Auth::user()->name,
+        ]
+    ];
+
+    $checkout = \PagSeguro::checkout()->createFromArray($data);
+    $credentials = \PagSeguro::credentials()->get();
+    $information = $checkout->send($credentials); // Retorna um objeto de laravel\pagseguro\Checkout\Information\Information
+    //dd($information);
+    $u = \Auth::user();
+    $u->pagseguro_code = $information->getCode();
+    $u->pagseguro_link = $information->getLink();
+    $u->save();
+  }
+  
+  public function redirect(){
+    return redirect()->route('public.ticket');
+  }
 
 }

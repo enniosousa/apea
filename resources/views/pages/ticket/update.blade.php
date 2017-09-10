@@ -44,15 +44,23 @@ foreach (\Auth::user()->enrols as $enrol) {
             <div class="list-group-item list-group-item-action flex-column align-items-start">
                 <dl>
                     <dt>Status do pagamento</dt>
-                    <dd>Aguardando o pagamento</dd>
+                    <dd>
+                      @if(\Auth::user()->pagseguro_status_name == null)
+                      Aguardando o pagamento
+                      @else
+                      {{\Auth::user()->pagseguro_status_name}}
+                      @endif
+                  </dd>
                 </dl>
             </div>
+            @if(\Auth::user()->pagseguro_status_name == null)
             <div class="list-group-item list-group-item-action flex-column align-items-start">
-                <a href="javascript://" class="btn btn-danger text-uppercase">
+                <a href="{{\Auth::user()->pagseguro_link}}" class="btn btn-danger text-uppercase" target="_blank">
                     <span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>
                     Pagar agora
                 </a>
             </div>
+            @endif
             <div class="list-group-item list-group-item-action flex-column align-items-start">
                 <button type="submit" class="btn btn-primary text-uppercase">
                     Atualizar inscrição

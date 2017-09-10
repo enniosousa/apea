@@ -61,7 +61,15 @@ Route::get('test', function() {
 });
 
 Route::get('test2', function() {
+    $code = '321792ACADBF4917A9A64780BEDB903F';
     $credentials = PagSeguro::credentials()->get();
     $transaction = PagSeguro::transaction()->get($code, $credentials);
     $information = $transaction->getInformation();
+    dd([
+      [
+        'code'=> $information->getStatus()->getCode(),
+        'name'=> $information->getStatus()->getName(),
+      ],
+      $information
+    ]);
 });
