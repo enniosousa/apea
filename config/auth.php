@@ -68,6 +68,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+            'table' => 'users',
         ],
 
         // 'users' => [
@@ -75,6 +76,8 @@ return [
         //     'table' => 'users',
         // ],
     ],
+    //por razões não investigadas o Entrust está pegando o Model dos usuários em auth.model
+    'model' => App\User::class,
 
     /*
     |--------------------------------------------------------------------------

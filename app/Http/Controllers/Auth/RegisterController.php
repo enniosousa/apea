@@ -7,20 +7,19 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends Controller
-{
+class RegisterController extends Controller {
     /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
+      |--------------------------------------------------------------------------
+      | Register Controller
+      |--------------------------------------------------------------------------
+      |
+      | This controller handles the registration of new users as well as their
+      | validation and creation. By default this controller uses a trait to
+      | provide this functionality without requiring any additional code.
+      |
+     */
 
-    use RegistersUsers;
+use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -34,8 +33,7 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('guest');
     }
 
@@ -45,18 +43,24 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        $rules =[
+    protected function validator(array $data) {
+        $rules = [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'fat_student' => 'required|in:true,false',
+            'fat_register' => 'required_if:fat_student,true|numeric',
         ];
-        $messages = [];
+        $messages = [
+            'fat_student.boolean' => 'O campo :attribute deve ser "Sim" ou "Não".',
+            'fat_register.required_if' => 'O campo matrícula é obrigatório quando você diz ser aluno da FAT.'
+        ];
         $attributes = [
             'name' => 'nome',
             'email' => 'e-mail',
             'password' => 'senha',
+            'fat_student' => 'aluno da FAT',
+            'fat_register' => 'matrícula'
         ];
         return Validator::make($data, $rules, $messages, $attributes);
     }
@@ -67,12 +71,15 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+    protected function create(array $data) {
+        $user = User::create([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'fat_register' => $data['fat_register'],
+                    'password' => bcrypt($data['password']),
         ]);
+        $user->roles()->sync(\App\Role::where('name', 'aluno')->first());
+        return $user;
     }
+
 }
