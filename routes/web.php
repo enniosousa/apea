@@ -31,7 +31,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['a
 Auth::routes();
 
 
-Route::group(['as' => 'pagseguro.', 'prefix'=> 'pagseguro'], function() {
+Route::group(['as' => 'pagseguro.', 'prefix' => 'pagseguro'], function() {
     Route::get('redirect', ['as' => 'redirect', 'uses' => 'Pagseguro\PagseguroController@redirect']);
     Route::post('notification', ['as' => 'notification', 'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification']);
 });
@@ -58,4 +58,10 @@ Route::get('test', function() {
     $credentials = \PagSeguro::credentials()->get();
     $information = $checkout->send($credentials); // Retorna um objeto de laravel\pagseguro\Checkout\Information\Information
     dd($information);
+});
+
+Route::get('test2', function() {
+    $credentials = PagSeguro::credentials()->get();
+    $transaction = PagSeguro::transaction()->get($code, $credentials);
+    $information = $transaction->getInformation();
 });
