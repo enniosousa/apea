@@ -49,7 +49,7 @@ use RegistersUsers;
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'fat_student' => 'required|in:true,false',
-            'fat_register' => 'required_if:fat_student,true|numeric',
+            'fat_register' => 'required_if:fat_student,true',
         ];
         $messages = [
             'fat_student.boolean' => 'O campo :attribute deve ser "Sim" ou "Não".',

@@ -18,6 +18,7 @@ class CreatePagseguroNotificationsTable extends Migration
             $table->string('pagseguro_link')->nullable()->default(null)->after('pagseguro_code');
             $table->string('pagseguro_status_code')->nullable()->default(null)->after('pagseguro_link');
             $table->string('pagseguro_status_name')->nullable()->default(null)->after('pagseguro_status_code');
+            $table->float('pagseguro_value')->nullable()->default(null)->after('pagseguro_status_name');
         });
         Schema::create('pagseguro_notifications', function (Blueprint $table) {
             $table->increments('id');
@@ -35,9 +36,12 @@ class CreatePagseguroNotificationsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('pagseguro_notifications');
-      Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('pagseguro_code');
+            $table->dropColumn('pagseguro_link');
             $table->dropColumn('pagseguro_status_code');
             $table->dropColumn('pagseguro_status_name');
+            $table->dropColumn('pagseguro_value');
         });
     }
 }

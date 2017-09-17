@@ -26,6 +26,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['a
 
     //inscritos
     Route::get('/inscritos', ['as' => 'enroleds.index', 'uses' => 'Dashboard\EnroledsController@index']);
+    Route::get('/inscrito/atualizar', ['as' => 'enroleds.update', 'uses' => 'Dashboard\EnroledsController@update']);
 });
 
 Auth::routes();
@@ -37,39 +38,5 @@ Route::group(['as' => 'pagseguro.', 'prefix' => 'pagseguro'], function() {
 });
 
 Route::get('test', function() {
-    $data = [
-        'items' => [
-            [
-                'id' => '1',
-                'description' => 'Ingresso da Semana Tech',
-                'quantity' => '1',
-                'amount' => \App\Discount::total(),
-                'maxAge' => 86400 * 2, //86400 = 1 dia
-            ]
-        ],
-        'reference' => \Auth::user()->id,
-        'sender' => [
-            'email' => \Auth::user()->email,
-            'name' => \Auth::user()->name,
-        ]
-    ];
-
-    $checkout = \PagSeguro::checkout()->createFromArray($data);
-    $credentials = \PagSeguro::credentials()->get();
-    $information = $checkout->send($credentials); // Retorna um objeto de laravel\pagseguro\Checkout\Information\Information
-    dd($information);
-});
-
-Route::get('test2', function() {
-    $code = '321792ACADBF4917A9A64780BEDB903F';
-    $credentials = PagSeguro::credentials()->get();
-    $transaction = PagSeguro::transaction()->get($code, $credentials);
-    $information = $transaction->getInformation();
-    dd([
-      [
-        'code'=> $information->getStatus()->getCode(),
-        'name'=> $information->getStatus()->getName(),
-      ],
-      $information
-    ]);
+   
 });

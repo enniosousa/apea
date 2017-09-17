@@ -44,6 +44,7 @@ class PagseguroController extends Controller {
     $u = \Auth::user();
     $u->pagseguro_code = $information->getCode();
     $u->pagseguro_link = $information->getLink();
+    $u->pagseguro_value = \App\Discount::total();
     $u->save();
   }
   

@@ -6,6 +6,7 @@ return [
     /*
      * Coloque abaixo as informações do seu cadastro no PagSeguro
      */
+    //GERAR O TOKE https://pagseguro.uol.com.br/preferencias/integracoes.jhtml
     'credentials' => [//INFORME AS CREDENCIAIS PADRÕES DE SUA LOJA, MAS PORDERÁ SER ALTERADA EM RUNTIME
         'email' => 'ennio21@gmail.com',
         'token' => '2C0AE3217E164B02BA4AEC34A1515462',

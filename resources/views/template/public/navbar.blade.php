@@ -8,7 +8,7 @@
 
                     <div class="navbar-brand">
                         <a href="{{url('/')}}" class="mbri-devices mbr-iconfont mbr-iconfont-menu navbar-logo"></a>
-                        <a class="navbar-caption" href="{{url('/')}}">SEMANA TECK</a>
+                        <a class="navbar-caption" href="{{url('/')}}">SEMANA TECH</a>
                     </div>
 
                 </div>
