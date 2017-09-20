@@ -14,11 +14,11 @@ class CreatePagseguroNotificationsTable extends Migration
     public function up()
     {
        Schema::table('users', function (Blueprint $table) {
-            $table->string('pagseguro_code')->nullable()->default(null)->after('fat_register');
-            $table->string('pagseguro_link')->nullable()->default(null)->after('pagseguro_code');
-            $table->string('pagseguro_status_code')->nullable()->default(null)->after('pagseguro_link');
-            $table->string('pagseguro_status_name')->nullable()->default(null)->after('pagseguro_status_code');
-            $table->float('pagseguro_value')->nullable()->default(null)->after('pagseguro_status_name');
+            $table->string('pagseguro_code')->nullable()->default(null);
+            $table->string('pagseguro_link')->nullable()->default(null);
+            $table->string('pagseguro_status_code')->nullable()->default(null);
+            $table->string('pagseguro_status_name')->nullable()->default(null);
+            $table->float('pagseguro_value')->nullable()->default(null);
         });
         Schema::create('pagseguro_notifications', function (Blueprint $table) {
             $table->increments('id');
