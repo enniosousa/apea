@@ -1,7 +1,7 @@
 @extends('template.public.index')
 
 @section('metaTitle', 'Semana Tech 2017 - Semana de Tecnologia da FAT')
-@section('metaDescription', 'A Semana Tech √© o evento de tenologia da Faculdade An√≠sio Teixeira pela coordena√ß√£o, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores')
+@section('metaDescription', 'A Semana Tech È o evento de tenologia da Faculdade AnÌsio Teixeira pela coordenaÁ„o, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores')
 
 @section('page')
 <section class="mbr-section mbr-section-hero mbr-section-full extHeader15 mbr-after-navbar" id="extHeader15-1" data-rv-view="4" style="background-image: url(assets/images/img-extheader15-bg.jpg);">
@@ -12,12 +12,12 @@
                 <div class="span-title">
                     <div class="span-title">
                         <span class="mbr-section-title display-2 text-center pad-r">NOSSAS</span>
-                        <span class="mbr-section-title display-2 element typedextHeader15-1" adress="typedextHeader15-1" firstel="PALESTRAS" secondel="OFICINAS" thirdel="PREMIA√á√ïES" typespeed="60"></span><br>
-                        <span class="mbr-section-title display-2 text-center pad-r">EST√Å CHEGANDO!</span>             
+                        <span class="mbr-section-title display-2 element typedextHeader15-1" adress="typedextHeader15-1" firstel="PALESTRAS" secondel="OFICINAS" thirdel="PREMIA«’ES" typespeed="60"></span><br>
+                        <span class="mbr-section-title display-2 text-center pad-r">EST√O CHEGANDO!</span>             
                     </div>
                 </div>
                 <div class="mbr-section-text lead text-center">
-                    <p>A Semana Tech √© um evento de tecnologia realizado pela coordena√ß√£o, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores da Faculdade An√≠sio Teixeira para a comunidade feirense.</p>
+                    <p>A Semana Tech È um evento de tecnologia realizado pela coordenaÁ„o, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores da Faculdade AnÌsio Teixeira para a comunidade feirense.</p>
                 </div>
                 <div class="countdown" data-end="2017/10/16"></div>
             </div>
