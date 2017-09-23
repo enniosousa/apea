@@ -15,11 +15,23 @@ class CreateActivitiesTable extends Migration {
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('speaker');
             $table->string('description');
             $table->string('type');
             $table->unsignedSmallInteger('vacancies');
-            $table->datetime('date');
+            $table->string('place');
             $table->timestamps();
+        });
+
+        Schema::create('activities_dates', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('activity_id')->unsigned();
+            $table->datetime('start');
+            $table->datetime('end');
+            $table->timestamps();
+
+            $table->foreign('activity_id')->references('id')->on('activities')
+                    ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -29,6 +41,10 @@ class CreateActivitiesTable extends Migration {
      * @return void
      */
     public function down() {
+        Schema::table('activities_dates', function(Blueprint $table) {
+            $table->dropForeign(['activity_id']);
+        });
+        Schema::dropIfExists('activities_dates');
         Schema::dropIfExists('activities');
     }
 

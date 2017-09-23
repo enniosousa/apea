@@ -15,12 +15,15 @@ class ActivitiesTableSeeder extends Seeder {
              * Palestras
              */
             [
-                'name' => 'Detecção e prevenção de anomalias e ataque',
+                'name' => 'DetecÃ§Ã£o e prevenÃ§Ã£o de anomalias e ataque',
                 'speaker' => 'Mariano Sumrell Miranda',
                 'description' => '',
                 'type' => 'Palestra',
                 'vacancies' => '200',
-                'date' => \Carbon\Carbon::parse('2017-10-23'),
+                'date' => [
+                    ['start' => '2017-10-23 19:00', 'end' => '2017-10-23 20:40'],
+                ],
+                'place' => 'AuditÃ³rio',
             ],
             [
                 'name' => 'PHP moderno',
@@ -28,7 +31,10 @@ class ActivitiesTableSeeder extends Seeder {
                 'description' => '',
                 'type' => 'Palestra',
                 'vacancies' => '200',
-                'date' => \Carbon\Carbon::parse('2017-10-23'),
+                'date' => [
+                    ['start' => '2017-10-23 20:50', 'end' => '2017-10-23 22:30'],
+                ],
+                'place' => 'AuditÃ³rio',
             ],
             [
                 'name' => 'Mesa Redonda: TI para a Sociedade',
@@ -36,15 +42,21 @@ class ActivitiesTableSeeder extends Seeder {
                 'description' => '',
                 'type' => 'Palestra',
                 'vacancies' => '200',
-                'date' => \Carbon\Carbon::parse('2017-10-24'),
+                'date' => [
+                    ['start' => '2017-10-24 18:30', 'end' => '2017-10-24 20:40'],
+                ],
+                'place' => 'AuditÃ³rio',
             ],
             [
-                'name' => 'Automação Residencial',
+                'name' => 'AutomaÃ§Ã£o Residencial',
                 'speaker' => 'Prof. Weber Costa Pinto dos Anjos',
                 'description' => '',
                 'type' => 'Palestra',
                 'vacancies' => '200',
-                'date' => \Carbon\Carbon::parse('2017-10-24'),
+                'date' => [
+                    ['start' => '2017-10-24 20:50', 'end' => '2017-10-24 22:30'],
+                ],
+                'place' => 'AuditÃ³rio',
             ],
             /*
              * Minicursos
@@ -52,17 +64,17 @@ class ActivitiesTableSeeder extends Seeder {
             [
                 'name' => 'Redes SDN',
                 'speaker' => 'Prof. Eber da Silva de Santana',
-                'description' => 'Explorar as vantagens que as redes SDN tem a oferecer. Desejável que os participantes possuam um conhecimento prévio em linux e redes de computadores e habilidades em virtualização.',
+                'description' => 'Explorar as vantagens que as redes SDN tem a oferecer. DesejÃ¡vel que os participantes possuam um conhecimento prÃ©vio em linux e redes de computadores e habilidades em virtualizaÃ§Ã£o.',
                 'type' => 'Minicurso',
                 'vacancies' => '30',
                 'date' => [
                     ['start' => '2017-10-23 20:50', 'end' => '2017-10-23 22:30'],
                     ['start' => '2017-10-24 18:30', 'end' => '2017-10-24 20:40'],
                 ],
-                'place' => 'Laboratório 1',
+                'place' => 'LaboratÃ³rio 1',
             ],
             [
-                'name' => 'Computação em nuvem orientado a serviço',
+                'name' => 'ComputaÃ§Ã£o em nuvem orientado a serviÃ§o',
                 'speaker' => 'Vagner Oliveira Pimentel Pereira',
                 'description' => '',
                 'type' => 'Minicurso',
@@ -71,10 +83,10 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2017-10-23 20:50', 'end' => '2017-10-23 22:30'],
                     ['start' => '2017-10-24 18:30', 'end' => '2017-10-24 20:40'],
                 ],
-                'place' => 'Laboratório 2',
+                'place' => 'LaboratÃ³rio 2',
             ],
             [
-                'name' => 'Big Data: Aplicações e ferramentoas',
+                'name' => 'Big Data: AplicaÃ§Ãµes e ferramentoas',
                 'speaker' => 'Erik Marques',
                 'description' => '',
                 'type' => 'Minicurso',
@@ -87,48 +99,49 @@ class ActivitiesTableSeeder extends Seeder {
             ],
             [
                 'name' => 'Laravel',
-                'speaker' => 'Ennio José Freitas Sousa',
-                'description' => 'Desenvolver uma pequena aplicação com o Laravel, um framework poderoso da linguagem PHP.',
+                'speaker' => 'Ennio JosÃ© Freitas Sousa',
+                'description' => 'Desenvolver uma pequena aplicaÃ§Ã£o com o Laravel, um framework poderoso da linguagem PHP.',
                 'type' => 'Minicurso',
                 'vacancies' => '30',
                 'date' => [
-                    ['start' => '2017-10-23 18:30', 'end' => '2017-10-23 20:50'],
+                    ['start' => '2017-10-23 18:30', 'end' => '2017-10-23 20:40'],
                     ['start' => '2017-10-24 20:50', 'end' => '2017-10-24 22:30'],
                 ],
-                'place' => 'Laboratório 1',
+                'place' => 'LaboratÃ³rio 1',
             ],
             [
-                'name' => 'Gamificação',
+                'name' => 'GamificaÃ§Ã£o',
                 'speaker' => '',
                 'description' => '',
                 'type' => 'Minicurso',
                 'vacancies' => '30',
                 'date' => [
-                    ['start' => '2017-10-23 18:30', 'end' => '2017-10-23 20:50'],
+                    ['start' => '2017-10-23 18:30', 'end' => '2017-10-23 20:40'],
                     ['start' => '2017-10-24 20:50', 'end' => '2017-10-24 22:30'],
                 ],
-                'place'=> 'Laboratório 2',
+                'place' => 'LaboratÃ³rio 2',
             ],
             [
-                'name' => 'Configuração de Serviço DHCP com Linux',
+                'name' => 'ConfiguraÃ§Ã£o de ServiÃ§o DHCP com Linux',
                 'speaker' => 'Prof. Kleverton Moises Silva',
-                'description' => 'Compreender o funcionamento e configuração do serviço DHCP em servidores Linux.',
+                'description' => 'Compreender o funcionamento e configuraÃ§Ã£o do serviÃ§o DHCP em servidores Linux.',
                 'type' => 'Minicurso',
                 'vacancies' => '30',
-                'date' => \Carbon\Carbon::parse('2017-10-'),
+                'date' => [
+                    ['start' => '2017-10-24 18:30', 'end' => '2017-10-24 20:40'],
+                ],
+                'place' => 'Sala X',
             ],
-                /* [
-                  'name'=> '',
-                  'speaker'=> '',
-                  'description'=> '',
-                  'type'=> 'Minicurso',
-                  'vacancies'=> '30',
-                  'date'=> \Carbon\Carbon::parse('2017-10-'),
-                  ], */
         ];
 
         foreach ($atividades as $atividade) {
-            \App\Activity::create($atividade);
+            $dates = $atividade['date'];
+            unset($atividade['date']);
+            $activity = \App\Activity::create($atividade);
+            
+            foreach ($dates as $date) {
+                $activity->dates()->create($date);
+            }
         }
     }
 
