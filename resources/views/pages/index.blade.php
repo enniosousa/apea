@@ -1,5 +1,7 @@
-@extends('template.public.index') @section('metaTitle', 'Semana Tech 2017 - Semana de Tecnologia da FAT') @section('metaDescription', 'A Semana Tech é o evento de tenologia da Faculdade Anísio Teixeira pela coordenação, professores e alunos dos cursos
-de Sistemas para Internet e Redes de Computadores') @section('page')
+@extends('template.public.index')
+@section('metaTitle', 'Semana Tech 2017 - Semana de Tecnologia da FAT')
+@section('metaDescription', 'A Semana Tech é o evento de tenologia da Faculdade Anísio Teixeira pela coordenação, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores')
+@section('page')
 <section class="mbr-section mbr-section-hero mbr-section-full extHeader15 mbr-after-navbar" 
          id="extHeader15-1" 
          data-rv-view="4" 
@@ -104,7 +106,7 @@ de Sistemas para Internet e Redes de Computadores') @section('page')
 
 
 
-
+<!--
 <section class="mbr-slider mbr-section mbr-section-nopadding carousel slide extTestimonials1 extTestimonials3 extTestimonials5" data-ride="carousel" data-keyboard="false" data-wrap="true" data-interval="5000" data-pause="false" id="extTestimonials5-3"
     data-rv-view="17" style="background-image: url(assets/images/flight-mountains-sky-flying.jpg); padding-top: 80px; padding-bottom: 40px;">
     <div class="mbr-section__container mbr-section__container--middle">
@@ -174,6 +176,8 @@ de Sistemas para Internet e Redes de Computadores') @section('page')
         </div>
     </div>
 </section>
+-->
+
 <section class="mbr-section-no-padding extForm4" id="extForm4-2" data-rv-view="39" style="background-color: rgb(250, 250, 250);">
     <div class="mbr-table mbr-table-full">
         <div class="mbr-table-cell">

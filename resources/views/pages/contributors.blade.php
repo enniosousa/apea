@@ -1,4 +1,7 @@
-@extends('template.public.index') @section('metaTitle', 'Colaboradores da Semana Tech 2017') @section('metaDescription', 'A Semana Tech de 2017 contou com a ajuda de muita gente de forma voluntária, portanto merce reconhecimento') @section('page')
+@extends('template.public.index')
+@section('metaTitle', 'Colaboradores da Semana Tech 2017')
+@section('metaDescription', 'A Semana Tech de 2017 contou com a ajuda de muita gente de forma voluntária, portanto merce reconhecimento')
+@section('page')
 <section class="mbr-cards mbr-section extFeatures mbr-after-navbar" id="extFeatures9-a" data-rv-view="65" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 80px;">
     <div class="mbr-section mbr-section-nopadding">
         <div class="container">
