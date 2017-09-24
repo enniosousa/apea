@@ -26,6 +26,17 @@ class ActivitiesTableSeeder extends Seeder {
                 'place' => 'Auditório',
             ],
             [
+                'name' => 'Automação Residencial',
+                'speaker' => 'Prof. Weber Costa Pinto dos Anjos',
+                'description' => '',
+                'type' => 'Palestra',
+                'vacancies' => '200',
+                'date' => [
+                    ['start' => '2017-10-24 20:50', 'end' => '2017-10-24 22:30'],
+                ],
+                'place' => 'Auditório',
+            ],
+            [
                 'name' => 'PHP moderno',
                 'speaker' => 'Jonatas Weber',
                 'description' => '',
@@ -47,17 +58,6 @@ class ActivitiesTableSeeder extends Seeder {
                 ],
                 'place' => 'Auditório',
             ],
-            [
-                'name' => 'Automação Residencial',
-                'speaker' => 'Prof. Weber Costa Pinto dos Anjos',
-                'description' => '',
-                'type' => 'Palestra',
-                'vacancies' => '200',
-                'date' => [
-                    ['start' => '2017-10-24 20:50', 'end' => '2017-10-24 22:30'],
-                ],
-                'place' => 'Auditório',
-            ],
             /*
              * Minicursos
              */
@@ -73,8 +73,9 @@ class ActivitiesTableSeeder extends Seeder {
                 ],
                 'place' => 'Laboratório 1',
             ],
+            
             [
-                'name' => 'Computação em nuvem orientado a serviço',
+                'name' => 'Introdução ao Cloud Computer',
                 'speaker' => 'Vagner Oliveira Pimentel Pereira',
                 'description' => '',
                 'type' => 'Minicurso',
@@ -86,9 +87,9 @@ class ActivitiesTableSeeder extends Seeder {
                 'place' => 'Laboratório 2',
             ],
             [
-                'name' => 'Big Data: Aplicações e ferramentoas',
+                'name' => 'Fundamentos de Big Data',
                 'speaker' => 'Erik Marques',
-                'description' => '',
+                'description' => 'Apresentar fundamentos e conceitos de Big Data',
                 'type' => 'Minicurso',
                 'vacancies' => '30',
                 'date' => [
@@ -98,7 +99,19 @@ class ActivitiesTableSeeder extends Seeder {
                 'place' => 'Sala X',
             ],
             [
-                'name' => 'Laravel',
+                'name' => 'PYTHON - Introdução ao Desenvolvimento de Aplicações com Python',
+                'speaker' => 'Aecio Pereira Santiago Junior',
+                'description' => 'Ser capaz de resolver problemas através da interpretação de cenários do mundo real, modelando soluções através de modelos e programas e implementando as soluções através de programas de computador escritos na linguagem Python.',
+                'type' => 'Minicurso',
+                'vacancies' => '30',
+                'date' => [
+                    ['start' => '2017-10-23 18:30', 'end' => '2017-10-23 20:40'],
+                    ['start' => '2017-10-24 20:50', 'end' => '2017-10-23 22:30'],
+                ],
+                'place' => 'Laboratório 2',
+            ],
+            [
+                'name' => 'Laravel - Introdução para iniciantes',
                 'speaker' => 'Ennio José Freitas Sousa',
                 'description' => 'Desenvolver uma pequena aplicação com o Laravel, um framework poderoso da linguagem PHP.',
                 'type' => 'Minicurso',
@@ -108,18 +121,6 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2017-10-24 20:50', 'end' => '2017-10-24 22:30'],
                 ],
                 'place' => 'Laboratório 1',
-            ],
-            [
-                'name' => 'Gamificação',
-                'speaker' => '',
-                'description' => '',
-                'type' => 'Minicurso',
-                'vacancies' => '30',
-                'date' => [
-                    ['start' => '2017-10-23 18:30', 'end' => '2017-10-23 20:40'],
-                    ['start' => '2017-10-24 20:50', 'end' => '2017-10-24 22:30'],
-                ],
-                'place' => 'Laboratório 2',
             ],
             [
                 'name' => 'Configuração de Serviço DHCP com Linux',
@@ -140,7 +141,10 @@ class ActivitiesTableSeeder extends Seeder {
             $activity = \App\Activity::create($atividade);
             
             foreach ($dates as $date) {
-                $activity->dates()->create($date);
+                $activity->dates()->create([
+                  'start' => \Carbon\Carbon::createFromFormat('Y-m-d H:i', $date['start']), 
+                  'end' => \Carbon\Carbon::createFromFormat('Y-m-d H:i', $date['end'])
+                ]);
             }
         }
     }

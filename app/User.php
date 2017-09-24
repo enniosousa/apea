@@ -34,5 +34,13 @@ class User extends Authenticatable {
                         ->withPivot('present')
                         ->withTimestamps();
     }
+    
+    public function enrolsIds(){
+        $userEnrols = [];
+        foreach ($this->enrols as $enrol) {
+            $userEnrols[] = $enrol->id;
+        }
+        return $userEnrols;
+    }
 
 }

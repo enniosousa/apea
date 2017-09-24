@@ -12,14 +12,16 @@ class EnrolRequest extends FormRequest {
 
     public function rules() {
         return [
-            'activities' => 'required|array',
-            'activities.*' => 'required|exists:activities,id'
+            'Palestra' => 'required|array',
+            'Palestra.*' => 'required|exists:activities,id',
+            'Minicurso' => 'required|exists:activities,id',
         ];
     }
 
     public function messages() {
         return [
-            'activities.required' => 'Você deve selecionar ao menos uma atividade.'
+            'Palestra.required' => 'Você deve selecionar ao menos uma palestra.',
+            'Minicurso.required' => 'Você deve selecionar um minicurso.',
         ];
     }
 

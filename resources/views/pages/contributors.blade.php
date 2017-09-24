@@ -1,9 +1,4 @@
-@extends('template.public.index')
-
-@section('metaTitle', 'Colaboradores da Semana Tech 2017')
-@section('metaDescription', 'A Semana Tech de 2017 contou com a ajuda de muita gente de forma voluntária, portanto merce reconhecimento')
-
-@section('page')
+@extends('template.public.index') @section('metaTitle', 'Colaboradores da Semana Tech 2017') @section('metaDescription', 'A Semana Tech de 2017 contou com a ajuda de muita gente de forma voluntária, portanto merce reconhecimento') @section('page')
 <section class="mbr-cards mbr-section extFeatures mbr-after-navbar" id="extFeatures9-a" data-rv-view="65" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 80px;">
     <div class="mbr-section mbr-section-nopadding">
         <div class="container">
@@ -15,102 +10,89 @@
             </div>
         </div>
     </div>
-    <div class="mbr-cards-row row">
-        <div class="mbr-cards-col col-xs-12 col-lg-2">
-            <div class="container">
-                <div class="card cart-block">
-                    <div class="feature-img"><img src="assets/images/face5.png" class="card-img-top"></div>
-                    <div class="card-block">
-                        <h4 class="feature-title">William Smith</h4>
-                        <h5 class="feature-subtitle">Programmer</h5>
-                        <div class="delimiter"></div>
-                        <p class="feature-text">Bootstrap 4 has been noted as one of the most reliable and proven frameworks and Mobirise has been equipped to develop websites using this framework.</p>
-                        <div class="icons">
-                            <span><a href="javascript://" class="socicon socicon-dribbble mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-lastfm mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-skype mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-linkedin mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
+    <?php
+        $colaboradores = [
+            (object)[
+                'name'=> 'Andreia Ferreira Alves Carneiro',
+                'role'=> 'Coordenação Geral do Evento',
+                'photo'=> 'images/colaboradores/Andrea.jpg',
+                'about'=> '',
+                'link'=> 'http://buscatextual.cnpq.br/buscatextual/visualizacv.do?metodo=apresentar&id=K4201062D6',
+            ],
+            (object)[
+                'name'=> 'Jamylle Santana da Fonseca',
+                'role'=> 'Coordenação Geral do Evento',
+                'photo'=> 'images/colaboradores/Jamylle.jpg',
+                'about'=> '',
+                'link'=> 'http://lattes.cnpq.br/5963507378750193',
+            ],
+            (object)[
+                'name'=> 'Weber Costa Pinto dos Anjos',
+                'role'=> 'Coordenação Geral do Evento',
+                'photo'=> 'images/colaboradores/Weber.jpg',
+                'about'=> '',
+                'link'=> 'http://lattes.cnpq.br/6457469584164618',
+            ],
+            (object)[
+                'name'=> 'Ed Weine Fernandes de Santana',
+                'role'=> 'Coordenação geral do Evento',
+                'photo'=> 'images/colaboradores/Ed Weine.jpg',
+                'about'=> '',
+                'link'=> 'http://lattes.cnpq.br/6740365910166592',
+            ],
+            (object)[
+                'name'=> 'João Ronaldo Tavares de Vasconcellos Junior',
+                'role'=> 'Coordenação Geral do Evento',
+                'photo'=> 'images/colaboradores/Vasconcellos.jpg',
+                'about'=> '',
+                'link'=> 'http://lattes.cnpq.br/0473368767041752',
+            ],
+            (object)[
+                'name'=> 'Arivaldo Ferreira Brito',
+                'role'=> 'Coordenação Geral do Evento',
+                'photo'=> 'images/colaboradores/Arivaldo.jpg',
+                'about'=> '',
+                'link'=> 'http://lattes.cnpq.br/8288573617244201',
+            ],
+            (object)[
+                'name'=> 'Renata Milena dos Anjos Silva',
+                'role'=> 'Coordenação Geral do Evento',
+                'photo'=> 'images/colaboradores/Renata.jpg',
+                'about'=> '',
+                'link'=> 'http://lattes.cnpq.br/6602411609589751',
+            ],
+        ];
+        $colaboradores = array_chunk($colaboradores, 4);
+        ?>
+        @foreach($colaboradores as $row)
+        <div class="mbr-cards-row row" style="@if($loop->index !== 0)margin-top: 30px;@endif">
+            @foreach($row as $c)
+            <div class="mbr-cards-col col-xs-12 col-lg-2">
+                <div class="container">
+                    <div class="card cart-block">
+                        <div class="feature-img"><img src="{{empty($c->photo) ? 'assets/images/face5.png' : $c->photo}}" class="card-img-top"></div>
+                        <div class="card-block">
+                            <h4 class="feature-title">{{$c->name}}</h4>
+                            <h5 class="feature-subtitle">{{$c->role}}</h5>
+                            <div class="delimiter"></div>
+                            @isset($c->about)
+                            <p class="feature-text">{{$c->about}}</p> @endisset
+                            <div class="icons">
+                                <span><a href="{{$c->link}}" target="_blank" class="etl-icon icon-attachment mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
+
+                                {{--
+                                <span><a href="javascript://" class="socicon socicon-dribbble mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
+                                <span><a href="javascript://" class="socicon socicon-lastfm mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
+                                <span><a href="javascript://" class="socicon socicon-skype mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
+                                <span><a href="javascript://" class="socicon socicon-linkedin mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
+                                --}}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
-        <div class="mbr-cards-col col-xs-12 col-lg-2">
-            <div class="container">
-                <div class="card cart-block">
-                    <div class="feature-img"><img src="assets/images/face1.png" class="card-img-top"></div>
-                    <div class="card-block">
-                        <h4 class="feature-title">Emma Jones</h4>
-                        <h5 class="feature-subtitle">SEO</h5>
-                        <div class="delimiter"></div>
-                        <p class="feature-text">One of Bootstrap 4's big points is responsiveness and Mobirise makes effective use of this by generating highly responsive website for you.</p>
-                        <div class="icons">
-                            <span><a href="javascript://" class="socicon socicon-dribbble mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-lastfm mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-skype mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-linkedin mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mbr-cards-col col-xs-12 col-lg-2">
-            <div class="container">
-                <div class="card cart-block">
-                    <div class="feature-img"><img src="assets/images/face6.png" class="card-img-top"></div>
-                    <div class="card-block">
-                        <h4 class="feature-title">Michael Taylor</h4>
-                        <h5 class="feature-subtitle">Manager</h5>
-                        <div class="delimiter"></div>
-                        <p class="feature-text">Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise makes it easy for you to use them on your website easily and freely.</p>
-                        <div class="icons">
-                            <span><a href="javascript://" class="socicon socicon-dribbble mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-lastfm mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-skype mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-linkedin mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mbr-cards-col col-xs-12 col-lg-2">
-            <div class="container">
-                <div class="card cart-block">
-                    <div class="feature-img"><img src="assets/images/face2.png" class="card-img-top"></div>
-                    <div class="card-block">
-                        <h4 class="feature-title">Emily Brown</h4>
-                        <h5 class="feature-subtitle">Reception</h5>
-                        <div class="delimiter"></div>
-                        <p class="feature-text">Mobirise gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.</p>
-                        <div class="icons">
-                            <span><a href="javascript://" class="socicon socicon-dribbble mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-lastfm mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-skype mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-linkedin mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mbr-cards-col col-xs-12 col-lg-2">
-            <div class="container">
-                <div class="card cart-block">
-                    <div class="feature-img"><img src="assets/images/face3.png" class="card-img-top"></div>
-                    <div class="card-block">
-                        <h4 class="feature-title">James Evans</h4>
-                        <h5 class="feature-subtitle">Sales</h5>
-                        <div class="delimiter"></div>
-                        <p class="feature-text">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
-                        <div class="icons">
-                            <span><a href="javascript://" class="socicon socicon-dribbble mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-lastfm mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-skype mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                            <span><a href="javascript://" class="socicon socicon-linkedin mbr-iconfont mbr-iconfont-extFeatures7" style="color: rgb(0, 0, 0);"></a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        @endforeach
 </section>
 @endsection

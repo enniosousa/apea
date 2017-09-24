@@ -17,8 +17,10 @@
         <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/animate.css/animate.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/dropdown/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
         <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/mobirise3-blocks-plugin/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/mobirise-gallery/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
         <link href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
@@ -43,6 +45,10 @@
         <script src="{{asset('assets/countdown/jquery.countdown.min.js')}}"></script>
         <script src="{{asset('assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js')}}"></script>
         <script src="{{asset('assets/theme/js/script.js')}}"></script>
+        
+        <script src="{{asset('assets/mobirise-gallery/player.min.js')}}"></script>
+        <script src="{{asset('assets/mobirise-gallery/script.js')}}"></script>
+        
         <script src="{{asset('assets/mobirise3-blocks-plugin/js/script.js')}}"></script>
         <script src="{{asset('assets/formoid/formoid.min.js')}}"></script>
         <input name="animation" type="hidden">

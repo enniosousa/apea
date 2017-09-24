@@ -1,46 +1,25 @@
-<?php
-$userEnrols = [];
-foreach (\Auth::user()->enrols as $enrol) {
-    $userEnrols[] = $enrol->id;
-}
-?>
-
 {!! Form::open(['action' => 'Enrol\EnrolController@update', 'method'=>'put']) !!}
 <div class="container carrinho">
-    @include('flash::message')
-    {!! $errors->first('activities', '<div class="alert alert-warning">:message</div>') !!}
-    <div class="col-md-8">
+     @include('flash::message') 
+    <div class="col-md-6">
         <div class="list-group">
-            @foreach(\App\Activity::all() as $activity)
-
-            <div class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <small class="pull-right">
-                        @if($activity->enroleds < $activity->vacancies)
-                        <input name="activities[]" value="{{$activity->id}}" type="checkbox" class="custom-control-input"
-                               @if(in_array($activity->id, $userEnrols))
-                               checked
-                               @endif
-                               >
-                               @else
-                               <input type="checkbox" class="custom-control-input" disabled>
-                        @endif
-                    </small>
-                    <h5 class="mb-1">{{$activity->name}}</h5>
-                </div>
-                <p class="mb-1">
-                    <span class="badge badge-default"><span class="mbri-calendar"></span> {{$activity->data}}</span>
-                    &nbsp;&nbsp;<span class="badge badge-default"><span class="mbri-users"></span> {{$activity->enroleds}}/{{$activity->vacancies}}</span>
-                    &nbsp;&nbsp;<span class="badge badge-default"><span class="mbri-idea"></span> {{$activity->type}}</span>
-                    <br>
-                    {{$activity->description}}
-                </p>
-            </div>
-            @endforeach
+            <p class="h2">Minicursos</p>
+           {!! $errors->first('Minicurso', '<div class="alert alert-warning">:message</div>') !!}
+            @each('pages.ticket.item', \App\Activity::where('type', 'Minicurso')->get(), 'activity')
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div class="list-group">
+            <p class="h2">Palestras</p>
+            {!! $errors->first('Palestra', '<div class="alert alert-warning">:message</div>') !!}
+            @each('pages.ticket.item', \App\Activity::where('type', 'Palestra')->get(), 'activity')
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="list-group">
+            <br>
+            <p class="h2">Checkout</p>
             <div class="list-group-item list-group-item-action flex-column align-items-start">
                 <dl>
                     <dt>Status do pagamento</dt>
@@ -69,15 +48,16 @@ foreach (\Auth::user()->enrols as $enrol) {
         </div>
     </div>
 </div>
-{!! Form::close() !!}
-@push('style')
+{!! Form::close() !!} @push('style')
 <style>
-    .carrinho{
+    .carrinho {
         margin-bottom: 1em;
     }
+
     .badge-default {
         background-color: #636c72;
     }
+
     .badge {
         display: inline-block;
         padding: .25em .4em;

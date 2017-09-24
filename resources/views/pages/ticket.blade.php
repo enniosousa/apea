@@ -5,6 +5,7 @@
 
 @section('page')
     <div class="container" style="margin-top: 120px;">
+        
         @if(\Auth::user()->enrols()->count())
             @include('pages.ticket.update')
         @else

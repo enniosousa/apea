@@ -6,13 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model {
 
-    protected $attributes = ['name', 'speaker', 'description', 'type', 'vacancies', 'place', ];
-    protected $appends = ['data', 'enroleds'];
-    protected $dates = ['date'];
-
-    public function getDataAttribute() {
-        return $this->date->format('d/m/Y \à\s H:m');
-    }
+    protected $fillable = ['name', 'speaker', 'description', 'type', 'vacancies', 'place', ];
+    protected $appends = ['enroleds'];
 
     public function getEnroledsAttribute() {
         return $this->enrols()->count();
