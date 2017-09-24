@@ -2,14 +2,16 @@
 
 return [
     /* DEFINE SE SERÁ UTILIZADO O AMBIENTE DE TESTES */
-    'use-sandbox' => true,
+    'use-sandbox' => false,
     /*
      * Coloque abaixo as informações do seu cadastro no PagSeguro
      */
     //GERAR O TOKE https://pagseguro.uol.com.br/preferencias/integracoes.jhtml
     'credentials' => [//INFORME AS CREDENCIAIS PADRÕES DE SUA LOJA, MAS PORDERÁ SER ALTERADA EM RUNTIME
-        'email' => 'ennio21@gmail.com',
-        'token' => '2C0AE3217E164B02BA4AEC34A1515462',
+        //'email' => 'ennio21@gmail.com',
+        //'token' => '2C0AE3217E164B02BA4AEC34A1515462',
+        'email'=> 'edsantana.eng@gmail.com',
+        'token'=> 'F7CAA9F2B83A4FF9AB097A498AB0E351',
     ],
     /*
      * Informe abaixo o nome / url das rotas de aplicação para notificações

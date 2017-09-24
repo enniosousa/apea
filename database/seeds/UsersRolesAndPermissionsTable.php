@@ -17,6 +17,7 @@ class UsersRolesAndPermissionsTable extends Seeder {
         foreach ($roles as $role) {
             $rol = \App\Role::create($role);
         }
+        $adminRole = \App\Role::where('name', 'admin')->first();
 
         $adminData = [
             'name' => 'Ennio José Freitas Sousa',
@@ -25,7 +26,16 @@ class UsersRolesAndPermissionsTable extends Seeder {
             'fat_register' => null,
         ];
         $admin = \App\User::create($adminData);
-        $admin->roles()->sync(\App\Role::where('name', 'admin')->first());
+        $admin->roles()->sync($adminRole);
+        
+        $vasconcellosData = [
+            'name' => 'Vasconcellos',
+            'email' => 'jvasconcellosjr@uol.com.br',
+            'password' => bcrypt('jvasconcellosjr'),
+            'fat_register' => null,
+        ];
+        $vasconcellos = \App\User::create($vasconcellosData);
+        $vasconcellos->roles()->sync($adminRole);
     }
 
 }
