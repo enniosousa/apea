@@ -60,7 +60,7 @@
                         @if(\Auth::check() && \Auth::user()->enrols()->count())
                         <li class="nav-item nav-btn"><a class="nav-link btn btn-success" href="{{route('public.ticket')}}">MINHA INSCRIÇÃO</a></li>
                         @else
-                        <li class="nav-item nav-btn"><a class="nav-link btn btn-danger" href="{{route('public.ticket')}}"><span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>COMPRAR O INGRESSO</a></li>
+                        <li class="nav-item nav-btn"><a class="nav-link btn btn-danger" href="{{route('public.ticket')}}"><span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>INSCREVER-SE</a></li>
                         @endif
 
 
