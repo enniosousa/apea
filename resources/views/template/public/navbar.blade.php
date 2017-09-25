@@ -1,12 +1,20 @@
+<style>
+    html.mobile section#extHeader15-1 {
+        padding-top: 100px;
+    }
+    #ext_menu-0 > nav,
+    #ext_menu-0 .nav-dropdown-sm
+    {
+        background-color: #dcdcdc !important;
+    }
+    #ext_menu-0 .link{
+        color: #282828 !important;
+    }
+    #ext_menu-0 .nav-dropdown-sm .link:hover{
+        color: white !important;
+    }
+</style>
 <section id="ext_menu-0" data-rv-view="0">
-    <style>
-        #ext_menu-0 > nav {
-            background-color: #dcdcdc !important;
-        }
-        #ext_menu-0 .link{
-            color: #282828 !important;
-        }
-    </style>
     <nav class="navbar navbar-dropdown navbar-fixed-top">
         <div class="container">
 
