@@ -119,6 +119,19 @@
         </div>
     </div>
 </section>
+<section class="mbr-section mbr-section__container" id="buttons1-s" data-rv-view="54" style="background-color: rgb(46, 46, 46); padding-top: 20px; padding-bottom: 20px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-xs-center"><a class="btn btn-danger" download href="{{asset('download/Programacao_IV_SEMANA_TECH.pdf')}}">
+                    <span class="etl-icon icon-download mbr-iconfont mbr-iconfont-btn"></span>BAIXAR A PROGRAMAÇÃO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 
 
 
