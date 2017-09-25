@@ -32,10 +32,18 @@
 
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
                         <li class="nav-item"><a class="nav-link link" href="{{url('/')}}#extFeatures11-n">PROGRAMAÇÃO</a></li>
-                        <li class="nav-item"><a class="nav-link link" href="{{url('download/EDITAL PARA APRESENTAÇÃO DE BANNER.pdf')}}">EDITAL DE BANNERS</a></li>
                         <!--
+                        <li class="nav-item"><a class="nav-link link" href="{{url('download/EDITAL PARA APRESENTAÇÃO DE BANNER.pdf')}}">EDITAL DE BANNERS</a></li>
                         <li class="nav-item"><a class="nav-link link" href="{{url('/')}}#extTestimonials5-3">PATROCINADORES</a></li>
                         -->
+                        <li class="nav-item dropdown open">
+                            <a class="nav-link link dropdown-toggle" href="javascript://" data-toggle="dropdown-submenu" aria-expanded="true">EDITAIS</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{url('download/EDITAL PARA APRESENTAÇÃO DE BANNER.pdf')}}" target="_blank">EDITAL DE BANNERS</a>
+                                <a class="dropdown-item" href="{{url('download/edital%20ideias%20inovadoras%20-%20Comentarios%20Versao%203.pdf')}}" target="_blank">EDITAL DE IDEIAS INOVADORAS</a>
+                            </div>
+                        </li>
+                        
                         <li class="nav-item"><a class="nav-link link" href="{{action('PublicPagesController@contributors')}}">EQUIPE</a></li>
                         <li class="nav-item"><a class="nav-link link" href="{{action('PublicPagesController@editions')}}">EDIÇÕES ANTERIORES</a></li>
                         <li class="nav-item"><a class="nav-link link" href="{{url('/')}}#extForm4-2">CONTATO</a></li>

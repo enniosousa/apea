@@ -36,6 +36,6 @@
 			</span>&nbsp;&nbsp;
 		@endforelse 
 		<span class="badge badge-default"><span class="mbri-users"></span> {{$activity->enroleds}}/{{$activity->vacancies}}</span>
-		<br> {{$activity->description}}
+		<br> {!!$activity->description!!}
 	</p>
 </div>

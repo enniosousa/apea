@@ -16,7 +16,7 @@ class CreateActivitiesTable extends Migration {
             $table->increments('id');
             $table->string('name');
             $table->string('speaker');
-            $table->string('description');
+            $table->text('description');
             $table->string('type');
             $table->unsignedSmallInteger('vacancies');
             $table->string('place');

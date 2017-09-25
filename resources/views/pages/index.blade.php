@@ -38,6 +38,23 @@
     </div>
 </section>
 
+<style>
+    ul.activity-desc li {
+        clear: both;
+        color: #cccccc;
+    }
+    .extFeatures11 ul .timeline-inverted {
+        text-align: left;
+    }
+    .timeline-inverted ul.activity-desc,
+    .timeline-inverted ul.activity-desc li,
+    .timeline-inverted ul.activity-desc ul {
+        float:none;
+    }
+    .timeline-inverted ul.activity-desc{
+        padding-left: 0px;
+    }
+</style>
 <section class="mbr-section extFeatures11" id="extFeatures11-n" data-rv-view="49" style="background-color: rgb(46, 46, 46); padding-top: 100px; padding-bottom: 100px;">
     <div class="elements-content">
 
@@ -67,9 +84,9 @@
                             <span class="iconBackground"><span class="icon"></span></span>
                             <div class="timeline-panel">
                                 <h4 class="h-black text-right">{{$loop->iteration}}. {{$activity->name}}</h4>
-                                <p class="mbr-section-text-gray lead h-black">
+                                <p class="mbr-section-text-gray lead h-black activity-description">
                                     <b>{{$activity->type}} ministrado por {{$activity->speaker}}</b><br>
-                                    {{$activity->description}}
+                                    {!!$activity->description!!}
                                 </p>
                             </div>
                         </li>
@@ -91,7 +108,7 @@
                                 <h4 class="h-black">{{$loop->iteration}}. {{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black">
                                     <b>{{$activity->type}} ministrado por {{$activity->speaker}}</b><br><br>
-                                    {{$activity->description}}
+                                    {!!$activity->description!!}
                                 </p>
                             </div>
                             <span class="iconBackgroundInverse"><span class="icon"></span></span>

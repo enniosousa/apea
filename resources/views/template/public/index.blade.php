@@ -53,6 +53,17 @@
         <script src="{{asset('assets/formoid/formoid.min.js')}}"></script>
         <input name="animation" type="hidden">
         @stack('scripts')
+        @if(config('app.env') === 'production')
+            <!-- Global Site Tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106980864-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments)};
+                gtag('js', new Date());
+
+                gtag('config', 'UA-106980864-1');
+            </script>
+        @endif
         <script type='application/ld+json'> 
             {
             "@context": "http://www.schema.org",
