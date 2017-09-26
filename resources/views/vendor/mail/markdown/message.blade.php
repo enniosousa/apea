@@ -1,8 +1,9 @@
 @component('mail::layout')
     {{-- Header --}}
     @slot('header')
-        @component('mail::header', ['url' => config('app.url')])
-            {{ config('app.name') }}
+        @component('mail::header', ['url' => url('/')])
+            <img src="{{asset('https://i.imgur.com/7YMQdW1.png')}}" height="100">
+            {{-- config('app.name') --}}
         @endcomponent
     @endslot
 
@@ -21,7 +22,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+            © {{ date('Y') }} {{ config('app.name') }}. Todos os direitos reservados.
         @endcomponent
     @endslot
 @endcomponent

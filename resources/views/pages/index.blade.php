@@ -85,7 +85,7 @@
                             <div class="timeline-panel">
                                 <h4 class="h-black text-right">{{$loop->iteration}}. {{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black activity-description">
-                                    <b>{{$activity->type}} ministrado por {{$activity->speaker}}</b><br>
+                                    <b>{{$activity->type}} ministrada por {{$activity->speaker}}</b><br>
                                     {!!$activity->description!!}
                                 </p>
                             </div>
