@@ -156,7 +156,8 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        laravel\pagseguro\Platform\Laravel5\ServiceProvider::class
+        laravel\pagseguro\Platform\Laravel5\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
         
     ],
     /*
@@ -208,6 +209,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'PagSeguro' => laravel\pagseguro\Platform\Laravel5\PagSeguro::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
         
     ],
 ];

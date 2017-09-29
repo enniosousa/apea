@@ -37,7 +37,9 @@ Route::group(['as' => 'pagseguro.', 'prefix' => 'pagseguro'], function() {
     Route::post('notification', ['as' => 'notification', 'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification']);
 });
 
-Route::get('test', function(){
+Route::get('test', function(){    
+    $pdf = PDF::loadView('certificates.student.index'/*, $data*/)->setPaper('a4', 'landscape');
+    return $pdf->stream('certificado.pdf');
     return view('certificates.student.index');
 });
 

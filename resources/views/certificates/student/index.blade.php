@@ -1,45 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	</head>
 	<body>
 		<div class="line outside">
 			<div class="line inside">
-				<table>
-					<tbody>
-						<tr>
-							<td>
-								<img src="{{asset('assets/images/tsemanatech-464x243.png')}}" class="logo semanatech">
-							</td>
-							<td>
-								<img src="{{asset('images/fat.png')}}" class="logo fat">
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<p class="p0 ft0">CERTIFICADO DE PARTICIPAÇÃO<p>
-								<P class="p1 ft1">A Faculdade Anísio Teixeira certifica que</P>
-								<P class="p2 ft2">Felipe Sousa Melo da Silva</P>
-								<P class="p3 ft2">Santos Xavier</P>
-								<P class="p4 ft4">participou do minicurso <SPAN class="ft3">Introdução ao Cloud Computer </SPAN>na IV Semana Tech, evento promovido pelos cursos de Redes de Computadores e Sistemas para Internet nos dias 00/00/0000 e 00/00/000 perfazendo um total de 00 horas de carga horária.</P>
+				<div style="clear:both;">
+					<img src="{{asset('assets/images/tsemanatech-464x243.png')}}" class="logo semanatech">
+					<img src="{{asset('images/fat.png')}}" class="logo fat">
+				</div>
+				<div style="clear:both; padding: 2mm;">
+					&nbsp;
+				</div>
+				<p class="p0 ft0">CERTIFICADO DE PARTICIPAÇÃO<p>
+				<P class="p1 ft1">A Faculdade Anísio Teixeira certifica que</P>
+				<P class="p2 ft2">Felipe Sousa Melo da Silva</P>
+				<P class="p3 ft2">Santos Xavier</P>
+				<P class="p4 ft4">participou do minicurso <SPAN class="ft3">Introdução ao Cloud Computer </SPAN>na IV Semana Tech, evento promovido pelos cursos de Redes de Computadores e Sistemas para Internet nos dias 00/00/0000 e 00/00/000 perfazendo um total de 00 horas de carga horária.</P>
 
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<p class="assinatura"><img src="{{asset('images/assinatura.png')}}"></p>
-								<P class="p5 ft5">JAMYLLE SANTANA DA FONSECA</P>
-								<P class="p6 ft6">COORDENADORA DOS CURSOS DE REDES DE COMPUTADORES E SISTEMAS PARA INTERNET</P>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<p class="assinatura"><img src="{{asset('images/assinatura.png')}}"></p>
+				<P class="p5 ft5">JAMYLLE SANTANA DA FONSECA</P>
+				<P class="p6 ft6">COORDENADORA DOS CURSOS DE REDES DE COMPUTADORES E SISTEMAS PARA INTERNET</P>
 			</div>
 		</div>
 		
 		
-		<style>
+		<style> 
 			.line{
     			border-color: #ccd4d7;
 				border-style: solid;
@@ -48,18 +35,23 @@
     			border-width: 8px;
 				border-radius: 30px;
 				padding: 10px;
-				margin: 10px
+				margin: 0px;
+				max-height: 100%;
 			}
 			.line.inside{
     			border-width: 4px;
 				border-radius: 15px;
-				padding: 10px 100px;
+				padding: 23px 50px;
+				max-height: 100%;
 			}
 			.logo{
 				height: 100px;
 			}
 			.logo.fat{
 				float: right;
+			}
+			p{
+				clear: both;
 			}
 			.logo.semanatech{
 				float: left;
