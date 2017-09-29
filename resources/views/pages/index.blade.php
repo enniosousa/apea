@@ -85,8 +85,13 @@
                             <div class="timeline-panel">
                                 <h4 class="h-black text-right">{{$loop->iteration}}. {{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black activity-description">
-                                    <b>{{$activity->type}} ministrada por {{$activity->speaker}}</b><br>
-                                    {!!$activity->description!!}
+                                    @if($activity->name == 'Mesa Redonda: TI para a Sociedade')
+                                        <b>Os participantes serão {{$activity->speaker}}</b><br>
+                                        {!!$activity->description!!}
+                                    @else
+                                        <b>{{$activity->type}} ministrada por {{$activity->speaker}}</b><br>
+                                        {!!$activity->description!!}
+                                    @endif
                                 </p>
                             </div>
                         </li>
@@ -107,8 +112,13 @@
                             <div class="timeline-panel">
                                 <h4 class="h-black">{{$loop->iteration}}. {{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black">
-                                    <b>{{$activity->type}} ministrado por {{$activity->speaker}}</b><br><br>
-                                    {!!$activity->description!!}
+                                    @if($activity->name == 'Mesa Redonda: TI para a Sociedade')
+                                        <b>Os participantes serão {{$activity->speaker}}</b><br>
+                                        {!!$activity->description!!}
+                                    @else
+                                        <b>{{$activity->type}} ministrada por {{$activity->speaker}}</b><br>
+                                        {!!$activity->description!!}
+                                    @endif
                                 </p>
                             </div>
                             <span class="iconBackgroundInverse"><span class="icon"></span></span>

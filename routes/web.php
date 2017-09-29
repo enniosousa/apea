@@ -36,3 +36,9 @@ Route::group(['as' => 'pagseguro.', 'prefix' => 'pagseguro'], function() {
     Route::get('redirect', ['as' => 'redirect', 'uses' => 'Pagseguro\PagseguroController@redirect']);
     Route::post('notification', ['as' => 'notification', 'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification']);
 });
+
+Route::get('test', function(){
+    return view('certificates.student.index');
+});
+
+
