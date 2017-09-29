@@ -108,17 +108,33 @@
             aria: {
                 sortAscending: ": activate to sort column ascending",
                 sortDescending: ": activate to sort column descending"
+            },
+            buttons: {
+                pageLength: {
+                    '-1': 'Total por página: Todos',
+                    _: 'Total por página: %d'
+                }
             }
+
         },
         dom: 'Bfrtip',
+        lengthMenu: [
+            [10, 25, 50, -1],
+            ['10', '25', '50', 'Todos']
+        ],
         buttons: [
-            'copyHtml5',
+            {
+                extend: 'copyHtml5',
+                text: 'Copiar',
+                //exportOptions: {modifier: {page: 'current'}}
+            },
             'excelHtml5',
             'csvHtml5',
             {
                 extend: 'pdfHtml5',
                 orientation: 'landscape'
-            }
+            },
+            'pageLength'
         ],
         columns: [
             {name: 'inscrito', data: 'inscrito'},
