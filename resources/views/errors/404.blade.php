@@ -1,0 +1,1 @@
+@include('errors.template.index', ['errorType'=> '404'])
