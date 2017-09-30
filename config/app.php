@@ -103,7 +103,7 @@ return [
       | Available Settings: "single", "daily", "syslog", "errorlog"
       |
      */
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
     /*
       |--------------------------------------------------------------------------
@@ -158,6 +158,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         laravel\pagseguro\Platform\Laravel5\ServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         
     ],
     /*
