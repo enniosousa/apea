@@ -10,7 +10,7 @@ class Discount extends Model {
     private static $discounts = [
         'early' => [
             'start' => '2017-09-01',
-            'end' => '2017-10-30',
+            'end' => '2017-09-30',
             'value' => 5.00 //valor em reais (não é porcentagem)
         ],
         'fat' => [
