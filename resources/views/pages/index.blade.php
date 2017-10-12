@@ -20,7 +20,7 @@
                 <div class="mbr-section-text lead text-center">
                     <p>A Semana Tech é um evento de tecnologia realizado pela coordenação, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores da Faculdade Anísio Teixeira.</p>
                 </div>
-                <div class="countdown" data-end="2017/10/16"></div>
+                <div class="countdown" data-end="2017/10/23"></div>
             </div>
         </div>
     </div>
