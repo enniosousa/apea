@@ -16,11 +16,11 @@ Route::group(['as' => 'public.'], function() {
     Route::get('/home', ['as' => 'index', 'uses' => 'PublicPagesController@home']);
     Route::get('/edicoes', ['as' => 'editions', 'uses' => 'PublicPagesController@editions']);
     Route::get('/colaboradores', ['as' => 'contributors', 'uses' => 'PublicPagesController@contributors']);
+    Route::get('/times-do-concurso-de-ideias-inovadoras', ['as' => 'pitchContestTeams', 'uses' => 'PublicPagesController@pitchContestTeams']);
     Route::get('/inscricao', ['as' => 'ticket', 'middleware' => 'auth', 'uses' => 'PublicPagesController@ticket']);
     Route::post('/inscricao/inscrever-se', ['as' => 'enrol.create', 'middleware' => 'auth', 'uses' => 'Enrol\EnrolController@create']);
     Route::put('/inscricao/alterar', ['as' => 'enrol.update', 'middleware' => 'auth', 'uses' => 'Enrol\EnrolController@update']);
 });
-
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'role:admin']], function() {
     Route::get('', ['as' => 'home.index', 'uses' => 'Dashboard\HomeController@index']);
 
@@ -41,8 +41,20 @@ Route::group(['as' => 'pagseguro.', 'prefix' => 'pagseguro'], function() {
     Route::post('notification', ['as' => 'notification', 'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification']);
 });
 
-Route::get('test', function(){    
-    $pdf = PDF::loadView('certificates.student.index'/*, $data*/)->setPaper('a4', 'landscape');
+Route::get('test', function(){
+    $a = \App\Activity::
+        join('enrols','enrols.activity_id', 'activities.id')
+        ->join('users', 'users.id', 'enrols.user_id')
+        ->select([
+            'activities.name as activity_name',
+            'activities.type as activity_type',
+            'users.name as enroled_name',
+            'users.email as enroled_email',
+            'activities.id', //necessário para pegar as datas da atividade
+        ])
+        ->get();
+    
+    $pdf = PDF::loadView('certificates.student.index', ['data'=> $a[2]])->setPaper('a4', 'landscape');
     return $pdf->stream('certificado.pdf');
     return view('certificates.student.index');
 });

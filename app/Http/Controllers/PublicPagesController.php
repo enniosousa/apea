@@ -21,6 +21,10 @@ class PublicPagesController extends Controller {
     public function contributors() {
         return view('pages.contributors');
     }
+    
+    public function pitchContestTeams(){
+        return view('pages.pitchContestTeams');
+    }
 
     public function ticket() {
         return view('pages.ticket');

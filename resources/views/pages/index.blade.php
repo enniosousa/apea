@@ -26,6 +26,89 @@
     </div>
     <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#msg-box3-g"><i class="mbr-arrow-icon"></i></a></div>
 </section>
+
+<!-- times do concurso de ideias inovadoras [inicio] -->
+<section class="mbr-section mbr-section__container article" id="header3-v" data-rv-view="62" style="background-color: rgb(255, 255, 255); padding-top: 80px; padding-bottom: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="mbr-section-title display-2 text-sm-center">Prêmios do Concurso de Ideias Inovadoras</h3>
+                <small class="mbr-section-subtitle text-sm-center">O concurso de Ideias Inovadoras será realizado durante a feira de tecnologia da Semana Tech, no dia 25/10/2017, quarta-feira e a <strong>ENTRADA É FRANCA</strong>.</small>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mbr-cards mbr-section mbr-section-nopadding" id="features4-u" data-rv-view="59" style="background-color: rgb(255, 255, 255);">
+    <div class="mbr-cards-row row">
+        <div class="mbr-cards-col col-xs-12 col-lg-2" style="padding-top: 0px; padding-bottom: 40px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript://" class="mbri-sale mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">Bolsa de 50% no curso de Desenvolvimento Web</h4>
+                        <p class="card-text">Oferecido por: Weber School</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-2" style="padding-top: 0px; padding-bottom: 40px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript://" class="mbri-growing-chart mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">Mentoria técnica para o projeto 1º colocado</h4>
+                        <p class="card-text">Oferecido por: Weber School</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-2" style="padding-top: 0px; padding-bottom: 40px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript://" class="mbri-gift mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">5 (cinco) aparelhos “retro” modelo TC 8312 da Intelbras</h4>
+                        <p class="card-text">Oferecido por: Torre Telecom</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-2" style="padding-top: 0px; padding-bottom: 40px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript://" class="mbri-sale mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">Bolsa integral para o curso de Excel avançado</h4>
+                        <p class="card-text">Oferecido por: Speed Informática</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-2" style="padding-top: 0px; padding-bottom: 40px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img iconbox"><a href="javascript://" class="mbri-laptop mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
+                    <div class="card-block">
+                        <h4 class="card-title">1 (um) notebook</h4>
+                        <p class="card-text">Oferecido por: SOSNotebook</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="mbr-section mbr-section__container" id="buttons1-x" data-rv-view="67" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 60px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-xs-center"><a class="btn btn-info" href="{{url('times-do-concurso-de-ideias-inovadoras')}}">CONHEÇA OS TIMES INSCRITOS NO CONCURSO</a> </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- times do concursod de ideias inovadoras [fim] -->
+
+<!--
 <section class="mbr-section article" id="msg-box3-g" data-rv-view="11" style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom: 120px;">
     <div class="container">
         <div class="row">
@@ -37,6 +120,7 @@
         </div>
     </div>
 </section>
+-->
 
 <style>
     ul.activity-desc li {
