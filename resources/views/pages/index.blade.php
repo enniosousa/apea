@@ -67,7 +67,7 @@
                 <div class="card cart-block">
                     <div class="card-img iconbox"><a href="javascript://" class="mbri-gift mbr-iconfont mbr-iconfont-features4" style="color: black;"></a></div>
                     <div class="card-block">
-                        <h4 class="card-title">5 (cinco) aparelhos “retro” modelo TC 8312 da Intelbras</h4>
+                        <h4 class="card-title">5 (cinco) aparelhos “retrô” modelo TC 8312 da Intelbras</h4>
                         <p class="card-text">Oferecido por: Torre Telecom</p>
                     </div>
                 </div>
