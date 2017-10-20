@@ -39,7 +39,8 @@
                                         <span class="iconBackground"><span class="icon"><span class="etl-icon icon-upload mbr-iconfont-features6" style="color: #333333"></span></span></span>
                                         <div>
                                             <h4 class="h-black">Monitorador Digital de Bebês Microcefálicos</h4>
-                                            <p class="mbr-section-text-gray lead h-black">Armada de Turing
+                                            <p class="mbr-section-text-gray lead h-black">
+                                                Armada de Turing
                                                 <br>Integrantes do Time:
                                                 <br>Abel Ramalho Galvão
                                                 <br>Francisco Tito Silva Santos Pereira
@@ -52,7 +53,8 @@
                                         <span class="iconBackground"><span class="icon"><span class="etl-icon icon-linegraph mbr-iconfont-features6" style="color: #333333"></span></span></span>
                                         <div>
                                             <h4 class="h-black">LIBRATALK: A solução para a comunicação entre pessoas com deficiência auditiva</h4>
-                                            <p class="mbr-section-text-gray lead h-black">Lucas de Sousa Santana
+                                            <p class="mbr-section-text-gray lead h-black">
+                                                Lucas de Sousa Santana
                                                 <br> Marcelo Moreira de Oliveira
                                                 <br>Cristiano Pereira Tinin
                                             </p>
@@ -62,7 +64,8 @@
                                         <span class="iconBackground"><span class="icon"><span class="etl-icon icon-heart mbr-iconfont-features6" style="color: #333333"></span></span></span>
                                         <div>
                                             <h4 class="h-black">Dispositivo para identificação de bactérias gram-positiva e gram-negativas</h4>
-                                            <p class="mbr-section-text-gray lead h-black">Rafael Aragão da Silva
+                                            <p class="mbr-section-text-gray lead h-black">
+                                                Rafael Aragão da Silva
                                                 <br>Rafael Silva dos Santos
                                                 <br>André Bião Cerqueira
                                                 <br>Edeltrudes Souza Costa Junior
@@ -74,11 +77,11 @@
                                         <span class="iconBackground"><span class="icon"><span class="etl-icon icon-target mbr-iconfont-features6" style="color: #333333"></span></span></span>
                                         <div>
                                             <h4 class="h-black">Librator</h4>
-                                            <p class="mbr-section-text-gray lead h-black">Rafael Aragão da Silva
+                                            <p class="mbr-section-text-gray lead h-black">
                                                 <br>Frank William
-												<br>Lays Santana
-												<br>Lucas Azevedo
-												<br>Mércia Natália
+                                                <br>Lays Santana
+                                                <br>Lucas Azevedo
+                                                <br>Mércia Natália
                                             </p>
                                         </div>
                                     </div>
