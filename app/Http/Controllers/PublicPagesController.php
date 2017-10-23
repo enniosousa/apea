@@ -29,5 +29,9 @@ class PublicPagesController extends Controller {
     public function ticket() {
         return view('pages.ticket');
     }
+    
+    public function endEnrols(){
+        return view('pages.endEnrols');
+    }
 
 }
