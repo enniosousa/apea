@@ -11,7 +11,17 @@ class EnrolController extends Controller {
     public function create(EnrolRequest $request) {
         $activities = array_merge(array_values($request->Palestra), [$request->Minicurso]);
         \Auth::user()->enrols()->sync($activities);
-        \App\Http\Controllers\Pagseguro\PagseguroController::checkout();
+        
+        //incrições gratuitas tem o email @semantech.invalid
+        if (! strpos(\Auth::user()->email, 'semanatech.invalid')) {
+            \App\Http\Controllers\Pagseguro\PagseguroController::checkout();
+        }
+        else{
+            $u = \Auth::user();
+            $u->pagseguro_status_name = 'Gratuito';
+            $u->save();
+        }
+        
         flash('Inscrição realizada com sucesso! Agora basta clickar no botão para efetuar o pagamento e garantir a sua vaga.')->success();
         return redirect()->back();
     }
