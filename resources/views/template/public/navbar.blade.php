@@ -23,7 +23,7 @@
 
                     <div class="navbar-brand">
                         <a href="{{url('/')}}" class="navbar-logo">
-                            <img src="assets/images/tsemanatech-464x243.png" alt="Semana Tech" title="Semana Tech">
+                            <img src="{{asset('assets/images/tsemanatech-464x243.png')}}" alt="Semana Tech" title="Semana Tech">
                         </a>
                         {{--
                         <a class="navbar-caption" href="{{url('/')}}">SEMANA TECH</a>
@@ -56,13 +56,19 @@
                         <li class="nav-item"><a class="nav-link link" href="{{action('PublicPagesController@editions')}}">EDIÇÕES ANTERIORES</a></li>
                         <li class="nav-item"><a class="nav-link link" href="{{url('/')}}#extForm4-2">CONTATO</a></li>
 
-
+                        {{--
                         @if(\Auth::check() && \Auth::user()->enrols()->count())
                         <li class="nav-item nav-btn"><a class="nav-link btn btn-success" href="{{route('public.ticket')}}">MINHA INSCRIÇÃO</a></li>
                         @else
                         <li class="nav-item nav-btn"><a class="nav-link btn btn-danger" href="{{route('public.ticket')}}"><span class="mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>INSCREVER-SE</a></li>
                         @endif
-
+                        --}}
+                        <li class="nav-item nav-btn">
+                            <a class="nav-link btn btn-success" href="{{action('Certificate\CertificateController@index')}}">
+                                <span class="mbri-bookmark mbr-iconfont mbr-iconfont-btn"></span>
+                                MEUS CERTIFICADOS
+                            </a>
+                        </li>
 
 
 

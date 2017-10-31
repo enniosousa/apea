@@ -24,6 +24,15 @@ Route::group(['as' => 'public.'], function() {
     //Route::post('/inscricao/inscrever-se', ['as' => 'enrol.create', 'middleware' => 'auth', 'uses' => 'Enrol\EnrolController@create']);
     //Route::put('/inscricao/alterar', ['as' => 'enrol.update', 'middleware' => 'auth', 'uses' => 'Enrol\EnrolController@update']);
 });
+
+Route::group([], function() {
+    Route::get('certificados', ['as' => 'public.certificate.index', 'middleware' => 'auth', 'uses' => 'Certificate\CertificateController@index']);
+    Route::get('certificado/validar', ['as' => 'public.certificate.validateCertificate', 'uses' => 'Certificate\CertificateController@validateCertificate']);
+    Route::get('api/certificado', ['as' => 'public.certificate.api.apiCertificate', 'middleware' => 'auth', 'uses' => 'Certificate\CertificateController@apiCertificate']);
+    Route::post('pesquisa-satisfacao', ['as' => 'public.customerSatisfaction.store', 'middleware' => 'auth', 'uses' => 'CustomerSatisfaction\CustomerSatisfactionController@store']);
+});
+
+
 Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.', 'middleware' => ['auth', 'role:admin']], function() {
     Route::get('', ['as' => 'home.index', 'uses' => 'Dashboard\HomeController@index']);
 
@@ -43,5 +52,4 @@ Route::group(['as' => 'pagseguro.', 'prefix' => 'pagseguro'], function() {
     Route::get('redirect', ['as' => 'redirect', 'uses' => 'Pagseguro\PagseguroController@redirect']);
     Route::post('notification', ['as' => 'notification', 'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification']);
 });
-
 

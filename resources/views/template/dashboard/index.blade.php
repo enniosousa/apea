@@ -57,9 +57,13 @@
         <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
         <script src="{{asset('vendor/datatables/jquery.dataTables.js')}}"></script>
         <script src="{{asset('vendor/datatables/dataTables.bootstrap4.js')}}"></script>
+        
+        <!-- jquery confirm -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 
         <!-- Custom scripts for this template -->
-        <script src="{{asset('js/sb-admin.min.js')}}"></script>
+        <script src="{{asset('js/sb-admin.js')}}"></script>
         @stack('scripts')
 
     </body>

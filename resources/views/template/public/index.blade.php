@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{{asset('assets/images/mbr-favicon.png')}}" type="image/x-icon">
         <meta name="description" content="@yield('metaDescription')">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('metaTitle')</title>
         <link rel="stylesheet" href="{{asset('assets/et-line-font-plugin/style.css')}}">
         <link rel="stylesheet" href="{{asset('https://fonts.googleapis.com/css?family=Montserrat:400,700')}}">
@@ -18,6 +19,7 @@
         <link rel="stylesheet" href="{{asset('assets/animate.css/animate.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/dropdown/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/socicon/css/styles.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/dataTables/dataTables.bootstrap4.css')}}">
         <link rel="stylesheet" href="{{asset('assets/theme/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/mobirise3-blocks-plugin/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/mobirise-gallery/style.css')}}">
@@ -44,6 +46,8 @@
         <script src="{{asset('assets/typed/typed.min.js')}}"></script>
         <script src="{{asset('assets/countdown/jquery.countdown.min.js')}}"></script>
         <script src="{{asset('assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js')}}"></script>
+        <script src="{{asset('assets/dataTables/jquery.dataTables.js')}}"></script>
+        <script src="{{asset('assets/dataTables/dataTables.bootstrap4.js')}}"></script>
         <script src="{{asset('assets/theme/js/script.js')}}"></script>
         
         <script src="{{asset('assets/mobirise-gallery/player.min.js')}}"></script>
@@ -51,6 +55,10 @@
         
         <script src="{{asset('assets/mobirise3-blocks-plugin/js/script.js')}}"></script>
         <script src="{{asset('assets/formoid/formoid.min.js')}}"></script>
+        
+        <!-- jquery confirm -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
         <input name="animation" type="hidden">
         @stack('scripts')
         @if(config('app.env') === 'production')
@@ -62,6 +70,16 @@
                 gtag('js', new Date());
 
                 gtag('config', 'UA-106980864-1');
+            </script>
+            <script>
+                $(document).ready(function(){
+                    $('[data-toggle="tooltip"]').tooltip(); 
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });  
+                });
             </script>
         @endif
         <script type='application/ld+json'> 

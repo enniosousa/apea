@@ -11,7 +11,7 @@ class PublicPagesController extends Controller {
     }
 
     public function home() {
-        return redirect()->action('PublicPagesController@ticket');
+        return redirect()->action('PublicPagesController@index');
     }
 
     public function editions() {

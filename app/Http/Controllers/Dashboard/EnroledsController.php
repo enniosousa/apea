@@ -11,6 +11,7 @@ class EnroledsController extends Controller {
         ->select([
           'enrols.id as enrol_id',
           'enrols.present as enrol_present',
+			'enrols.code as enrol_code',
           'users.name as user_name',
 					'users.pagseguro_value as value',
           'users.fat_register as fat_register',
@@ -33,7 +34,7 @@ class EnroledsController extends Controller {
 		$enrol->present = ! $enrol->present;
 		$enrol->save();
 		
-		$btnClass = $enrol->present ? 'btn btn-danger' : 'btn btn-primary' ;
+		$btnClass = $enrol->present ? 'btn btn-sm btn-danger' : 'btn btn-sm btn-primary' ;
 		$btnText = $enrol->present ? 'Cancelar presença' : 'Confirmar presença' ;
 		
 		return "$('#btn-{$enrol->id}').loading('stop').removeClass().addClass('$btnClass').text('$btnText');";

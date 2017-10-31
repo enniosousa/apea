@@ -8,65 +8,74 @@
 'Lista de inscritos' => '',
 ]])
 @endcomponent
-<!-- Icon Cards -->
 <div class="card mb-3">
-    <div class="card-header">
-        <i class="fa fa-table"></i>
-        Lista de inscritos
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" width="100%" data-id="dataTable" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Inscrito</th>
-                        <th>Matrícula</th>
-                        <th>Valor</th>
-                        <th>Pagamento</th>
-                        <th>Atividade</th>
-                        <th>Presente?</th>
-                    </tr>
-                    <tr>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                          <th></th>
-                      </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Inscrito</th>
-                        <th>Matrícula</th>
-                        <th>Valor</th>
-                        <th>Pagamento</th>
-                        <th>Atividade</th>
-                        <th>Presente?</th>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    @foreach($enroleds as $enroled)
-                    <tr>
-                        <td>{{$enroled->user_name}}</td>
-                        <td>{{$enroled->fat_register or 'Não tem'}}</td>
-                        <td>R$ {{number_format($enroled->value, 2, ',', ' ')}}</td>                      
-                        <td>{{$enroled->pagseguro_status_name or 'Não pago'}}</td>
-                        <td>{{$enroled->activity_name}}</td>
-                        <td>
-                          <a href="javascript://" 
-                             onclick="is_present({{$enroled->enrol_id}}, this);" 
-                             class="btn {{$enroled->enrol_present ? 'btn-danger' : 'btn-primary'}}"
-                             id="btn-{{$enroled->enrol_id}}">
-                            {{$enroled->enrol_present ? 'Cancelar presença' : 'Confirmar presença'}}
-                          </a>
-                      </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
+	<div class="card-header">
+		<i class="fa fa-table"></i>
+		Lista de inscritos
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered" width="100%" data-id="dataTable" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Inscrito</th>
+						<th>Matrícula</th>
+						<th>Valor</th>
+						<th>Pagamento</th>
+						<th>Atividade</th>
+						<th>Presente?</th>
+						<th>Certificado</th>
+					</tr>
+					<tr>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<th>Inscrito</th>
+						<th>Matrícula</th>
+						<th>Valor</th>
+						<th>Pagamento</th>
+						<th>Atividade</th>
+						<th>Presente?</th>
+						<th>Certificado</th>
+					</tr>
+				</tfoot>
+				<tbody>
+					@foreach($enroleds as $enroled)
+					<tr>
+						<td>{{$enroled->user_name}}</td>
+						<td>{{$enroled->fat_register or 'Não tem'}}</td>
+						<td>R$ {{number_format($enroled->value, 2, ',', ' ')}}</td>
+						<td>{{$enroled->pagseguro_status_name or 'Não pago'}}</td>
+						<td>{{$enroled->activity_name}}</td>
+						<td>
+							<a href="javascript://" 
+								onclick="is_present({{$enroled->enrol_id}}, this);" 
+								class="btn btn-sm {{$enroled->enrol_present ? 'btn-danger' : 'btn-primary'}}"
+								id="btn-{{$enroled->enrol_id}}">
+							{{$enroled->enrol_present ? 'Cancelar presença' : 'Confirmar presença'}}
+							</a>
+						</td>
+						<td>
+							<button class="btn btn-success btn-sm" 
+								onclick="downloadCertificate('{{$enroled->enrol_code}}')"
+								>
+							<span class="mbri-save mbr-iconfont mbr-iconfont-btn"></span> Baixar o certificado
+							</button>
+						</td>
+					</tr>
+					@endforeach
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
 @endsection
 
@@ -75,13 +84,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-pt_BR.js"></script>
 
-<script src="//cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/pdfmake.min.js"></script>
-<script src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.27/build/vfs_fonts.js"></script>
-<script src="//cdn.datatables.net/buttons/1.3.1/js/buttons.html5.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.4.2/b-colvis-1.4.2/b-flash-1.4.2/b-html5-1.4.2/b-print-1.4.2/cr-1.4.1/fc-3.2.3/fh-3.1.3/kt-2.3.2/r-2.2.0/rg-1.0.2/rr-1.2.3/sc-1.4.3/sl-1.2.3/datatables.min.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.4.2/b-colvis-1.4.2/b-flash-1.4.2/b-html5-1.4.2/b-print-1.4.2/cr-1.4.1/fc-3.2.3/fh-3.1.3/kt-2.3.2/r-2.2.0/rg-1.0.2/rr-1.2.3/sc-1.4.3/sl-1.2.3/datatables.min.js"></script>
 <script src="//cdn.rawgit.com/ashl1/datatables-rowsgroup/v1.0.0/dataTables.rowsGroup.js"></script>
-<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 <script>
     /* global dataTableOpt */
     var tableConfig = {
@@ -143,6 +150,7 @@
             {name: 'pagamento', data: 'pagamento'},
             {name: 'atividade', data: 'atividade'},
             {name: 'presente', data: 'presente'},
+            {name: 'certificado', data: 'certificado'},
         ],
         rowsGroup: [
             'inscrito:name',
@@ -180,7 +188,7 @@
         },
     };
     var table = $('table').DataTable(tableConfig);
-    $('div.dt-buttons').addClass('btn-group');
+    $('div.dt-buttons').addClass('btn-group').css('float', 'left');
     $('a.dt-button').addClass('btn btn-secondary');
 </script>
 
@@ -205,4 +213,14 @@
         $.ajax(config);
   }
 </script>
+
+<!-- scripts dos certificados -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+<script>
+	var $certificateURLs = {
+		api: "{{action('Certificate\CertificateController@apiCertificate')}}",
+		validator: "{{action('Certificate\CertificateController@validateCertificate')}}"
+	};
+</script>
+<script src="{{asset('assets/app/app.js')}}"></script>
 @endpush

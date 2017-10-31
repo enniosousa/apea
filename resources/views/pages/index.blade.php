@@ -2,6 +2,41 @@
 @section('metaTitle', 'Semana Tech 2017 - Semana de Tecnologia da FAT')
 @section('metaDescription', 'A Semana Tech é o evento de tenologia da Faculdade Anísio Teixeira pela coordenação, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores')
 @section('page')
+<style>
+.btn-black-outline {
+    background: rgba(27, 27, 27, 0.35);
+    border-color: white;
+    color: white;
+}
+</style>
+<section class="mbr-section mbr-section-hero mbr-section-full mbr-section-with-arrow mbr-parallax-background mbr-after-navbar" 
+         id="header1-15" 
+         data-rv-view="294" 
+         style="background-image: url(assets/images/moscow-city-2210335-1920x1271.jpg);">
+    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+	<div class="mbr-table-cell">
+		<div class="container">
+			<div class="row">
+				<div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
+					<h1 class="mbr-section-title display-1">IV SEMANA TECH REALIZADA COM SUCESSO!</h1>
+					<p class="mbr-section-lead lead">Um enorme obrigado a todos que fizeram parte desta edição!</p>
+					<div class="mbr-section-btn">
+                        <a class="btn btn-lg btn-success" href="{{action('Certificate\CertificateController@index')}}">
+                            <span class="mbri-bookmark mbr-iconfont mbr-iconfont-btn"></span>
+                            MEUS CERTIFICADOS
+                        </a>
+                        <a class="btn btn-lg btn-black-outline btn-black" href="{{action('PublicPagesController@editions')}}">
+                            <span class="mbri-image-gallery mbr-iconfont mbr-iconfont-btn"></span>
+                            FOTOS DESTA EDIÇÃO
+                        </a>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="mbr-arrow mbr-arrow-floating" aria-hidden="true"><a href="#extHeader15-1"><i class="mbr-arrow-icon"></i></a></div>
+</section>
+<!--
 <section class="mbr-section mbr-section-hero mbr-section-full extHeader15 mbr-after-navbar" 
          id="extHeader15-1" 
          data-rv-view="4" 
@@ -26,6 +61,7 @@
     </div>
     <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#msg-box3-g"><i class="mbr-arrow-icon"></i></a></div>
 </section>
+-->
 
 <!-- times do concurso de ideias inovadoras [inicio] -->
 <section class="mbr-section mbr-section__container article" id="header3-v" data-rv-view="62" style="background-color: rgb(255, 255, 255); padding-top: 80px; padding-bottom: 20px;">
