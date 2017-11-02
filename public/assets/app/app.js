@@ -11,7 +11,7 @@ function certificatePDFMakeConfig($data) {
         um total de 00 horas de carga horária.
         */
         var $type = $data.activity_type === "Palestra" ? 'da palestra' : 'do minicurso';
-        var $dates = $data.dates.length > 1 ? ' nos dias ' : ' no dia ';
+        var $dates = $data.dates.length > 1 ? ', nos dias ' : ', no dia ';
         for (var $i = 0; $i < $data.dates.length; $i++) {
             //caso só tenha uma data
             if ($data.dates.length === 1 && $i === 0) {
@@ -33,14 +33,14 @@ function certificatePDFMakeConfig($data) {
                 $dates += ', ' + $data.dates[$i];
             }
         }
-        var $workload = $data.activity_type === "Palestra" ? '2' : '4';
+        var $workload = '4';
         var $text = 'participou ' +
             $type +
             ' ' +
             $data.activity_name +
             ' na IV Semana Tech, evento promovido pelos cursos de Redes de Computadores e Sistemas para Internet' +
             $dates +
-            ' perfazendo a carga horária de ' +
+            ', perfazendo a carga horária de ' +
             $workload +
             ' horas.';
         return $text;
@@ -84,7 +84,7 @@ function certificatePDFMakeConfig($data) {
                             {
                                 image: 'logoFAT',
                                 width: '110',
-                                link: 'http://www.fat.edu.br/',
+                                link: 'http://www.semanatech.com.br/',
                                 alignment: 'right',
                             },
                         ]
