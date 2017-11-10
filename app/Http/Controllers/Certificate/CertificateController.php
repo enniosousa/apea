@@ -61,7 +61,7 @@ class CertificateController extends Controller
                     //datas das atividades
                     $dates = \DB::table('activities_dates')->where('activity_id', $item->activity_id)->get(['start', 'end']);
                     foreach($dates as $date){
-                        $item->dates[] = \Carbon\Carbon::createFromFormat("Y-m-d H:m:s", $date->start)->format('d/m/Y');
+                        $item->dates[] = \Carbon\Carbon::parse($date->start)->format('d/m/Y');
                     }
                     
                     //remover o ID da atividade
