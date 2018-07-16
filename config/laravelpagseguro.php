@@ -8,10 +8,8 @@ return [
      */
     //GERAR O TOKE https://pagseguro.uol.com.br/preferencias/integracoes.jhtml
     'credentials' => [//INFORME AS CREDENCIAIS PADRÕES DE SUA LOJA, MAS PORDERÁ SER ALTERADA EM RUNTIME
-        //'email' => 'ennio21@gmail.com',
-        //'token' => '2C0AE3217E164B02BA4AEC34A1515462',
-        'email'=> 'edsantana.eng@gmail.com',
-        'token'=> '5AD59F9A1C1C01A22472DF862E0D4E73',
+        'email' => '',
+        'token' => '',
     ],
     /*
      * Informe abaixo o nome / url das rotas de aplicação para notificações
