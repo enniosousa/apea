@@ -28,6 +28,6 @@ class EnrolConfirmationMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.enrolConfirmation')->subject('Confirmação de inscrição na Semana Tech');
+        return $this->markdown('emails.enrolConfirmation')->subject('Confirmação de inscrição na Semana SER');
     }
 }

@@ -2,14 +2,14 @@
 
 return [
     /* DEFINE SE SERÁ UTILIZADO O AMBIENTE DE TESTES */
-    'use-sandbox' => false,
+    'use-sandbox' => env('PS_SANDBOX', false),
     /*
      * Coloque abaixo as informações do seu cadastro no PagSeguro
      */
     //GERAR O TOKE https://pagseguro.uol.com.br/preferencias/integracoes.jhtml
     'credentials' => [//INFORME AS CREDENCIAIS PADRÕES DE SUA LOJA, MAS PORDERÁ SER ALTERADA EM RUNTIME
-        'email' => '',
-        'token' => '',
+        'email' => env('PS_EMAIL', ''),
+        'token' => env('PS_TOKEN', ''),
     ],
     /*
      * Informe abaixo o nome / url das rotas de aplicação para notificações
@@ -46,7 +46,7 @@ return [
             'type' => 'curl',
             'options' => [
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_0,
-            //CURLOPT_PROXY => 'http://user:pass@host:port', // PROXY OPTION
+                //CURLOPT_PROXY => 'http://user:pass@host:port', // PROXY OPTION
             ]
         ],
     ],

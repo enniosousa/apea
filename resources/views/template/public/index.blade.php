@@ -84,35 +84,35 @@
         @endif
         <script type='application/ld+json'> 
             {
-            "@context": "http://www.schema.org",
-            "@type": "Event",
-            "name": "Semana Tech",
-            "url": "{{url('/')}}",
-            "description": "A Semana Tech é um evento de tecnologia realizado pela coordenação, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores da Faculdade Anísio Teixeira para a comunidade feirense.",
-            "startDate": "2017-10-16T18:30",
-            "endDate": "2017-10-18T22:00",
-            "location": {
-            "@type": "Place",
-            "name": "Auditório Ernestina Carneiro",
-            "sameAs": "http://www.fat.edu.br",
-            "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Rua General João Costa",
-            "addressLocality": "Feira de Santana",
-            "addressRegion": "Bahia",
-            "postalCode": "44075-505",
-            "addressCountry": "Brasil"
-            }
-            },
-            "offers": {
-            "@type": "Offer",
-            "description": "Primeiro lote de ingressos",
-            "url": "https://evac.azurewebsites.net/ingresso",
-            "availability": "https://evac.azurewebsites.net/ingresso",
-            "price": "25",
-            "priceCurrency": "BRL",
-            "validFrom": "2017-08-25T00:00"
-            }
+                "@context": "http://www.schema.org",
+                "@type": "Event",
+                "name": "Semana SER",
+                "url": "{{url('/')}}",
+                "description": "A Semana SER é um evento dos cursos de Sistemas para Internet, Engenharia de Produção e Rede de Computadores realizado pela Faculdade Anísio Teixeira para a comunidade feirense.",
+                "startDate": "2018-10-22T18:30",
+                "endDate": "2018-10-25T22:00",
+                "location": {
+                    "@type": "Place",
+                    "name": "Auditório Ernestina Carneiro",
+                    "sameAs": "http://www.fat.edu.br",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Rua General João Costa",
+                        "addressLocality": "Feira de Santana",
+                        "addressRegion": "Bahia",
+                        "postalCode": "44075-505",
+                        "addressCountry": "Brasil"
+                    }
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "description": "Primeiro lote de ingressos",
+                    "url": "<?= url('ingresso') ?>",
+                    "availability": "<?= url('ingresso') ?>",
+                    "price": "30",
+                    "priceCurrency": "BRL",
+                    "validFrom": "2018-10-10T23:59"
+                }
             }
         </script>
     </body>

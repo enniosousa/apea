@@ -18,11 +18,12 @@
 			<table class="table table-bordered" width="100%" data-id="dataTable" cellspacing="0">
 				<thead>
 					<tr>
-						<th>Inscrito</th>
+						<th>Nome</th>
 						<th>Matrícula</th>
 						<th>Valor</th>
-						<th>Pagamento</th>
+						<th>Status pagamento</th>
 						<th>Atividade</th>
+						<th>Inscrito em</th>
 						<th>Presente?</th>
 						<th>Certificado</th>
 					</tr>
@@ -34,15 +35,17 @@
 						<th></th>
 						<th></th>
 						<th></th>
+						<th></th>
 					</tr>
 				</thead>
 				<tfoot>
 					<tr>
-						<th>Inscrito</th>
+						<th>Nome</th>
 						<th>Matrícula</th>
 						<th>Valor</th>
-						<th>Pagamento</th>
+						<th>Status pagamento</th>
 						<th>Atividade</th>
+						<th>Inscrito em</th>
 						<th>Presente?</th>
 						<th>Certificado</th>
 					</tr>
@@ -55,6 +58,7 @@
 						<td>R$ {{number_format($enroled->value, 2, ',', ' ')}}</td>
 						<td>{{$enroled->pagseguro_status_name or 'Não pago'}}</td>
 						<td>{{$enroled->activity_name}}</td>
+						<td>{{\Carbon\Carbon::parse($enroled->created_at)->format('d/m/Y H:m')}}</td>
 						<td>
 							<a href="javascript://" 
 								onclick="is_present({{$enroled->enrol_id}}, this);" 
@@ -149,6 +153,7 @@
             {name: 'valor', data: 'valor'},
             {name: 'pagamento', data: 'pagamento'},
             {name: 'atividade', data: 'atividade'},
+            {name: 'inscrito_em', data: 'inscrito_em'},
             {name: 'presente', data: 'presente'},
             {name: 'certificado', data: 'certificado'},
         ],
@@ -195,8 +200,12 @@
 <link href="//cdn.jsdelivr.net/jquery.loading/1.2.0/jquery.loading.min.css" rel="stylesheet">
 <script src="//cdn.jsdelivr.net/jquery.loading/1.2.0/jquery.loading.min.js"></script>
 <script>
-  function is_present(activity, el){
-    $(el).loading();
+    function is_present(activity, el){
+        var url = '{!!action('Dashboard\EnroledsController@update')!!}';
+        load_ajax(activity, el, url);
+    }
+    function load_ajax(activity, el, url){
+        $(el).loading();
         var url = '{!!action('Dashboard\EnroledsController@update')!!}';
         var config = {
             url: url,
@@ -211,7 +220,7 @@
             }
         };
         $.ajax(config);
-  }
+    }
 </script>
 
 <!-- scripts dos certificados -->

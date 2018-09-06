@@ -18,11 +18,11 @@ Route::group(['as' => 'public.'], function() {
     Route::get('/colaboradores', ['as' => 'contributors', 'uses' => 'PublicPagesController@contributors']);
     Route::get('/times-do-concurso-de-ideias-inovadoras', ['as' => 'pitchContestTeams', 'uses' => 'PublicPagesController@pitchContestTeams']);
     
-    Route::get('/inscricao', ['as' => 'ticket', 'uses' => 'PublicPagesController@endEnrols']);
+    //Route::get('/inscricao', ['as' => 'ticket', 'uses' => 'PublicPagesController@endEnrols']);
     
-    //Route::get('/inscricao', ['as' => 'ticket', 'middleware' => 'auth', 'uses' => 'PublicPagesController@ticket']);
-    //Route::post('/inscricao/inscrever-se', ['as' => 'enrol.create', 'middleware' => 'auth', 'uses' => 'Enrol\EnrolController@create']);
-    //Route::put('/inscricao/alterar', ['as' => 'enrol.update', 'middleware' => 'auth', 'uses' => 'Enrol\EnrolController@update']);
+    Route::get('/inscricao', ['as' => 'ticket', 'middleware' => 'auth', 'uses' => 'PublicPagesController@ticket']);
+    Route::post('/inscricao/inscrever-se', ['as' => 'enrol.create', 'middleware' => 'auth', 'uses' => 'Enrol\EnrolController@create']);
+    Route::put('/inscricao/alterar', ['as' => 'enrol.update', 'middleware' => 'auth', 'uses' => 'Enrol\EnrolController@update']);
 });
 
 Route::group([], function() {

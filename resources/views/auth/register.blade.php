@@ -54,7 +54,7 @@
                         <div class="form-group fat_register" style="{{old('fat_student') === null || old('fat_student') == 'false' ? 'display:none;' : ''}}">
                             <label for="fat_register">Matrícula de aluno da FAT</label>
                             <input name="fat_register" type="text" value="{{old('fat_register')}}" class="form-control {{$errors->first('fat_register', 'is-invalid')}}" id="fat_register" placeholder="Matrícula de aluno da FAT">
-                            <small id="registerHelpBlock" class="form-text text-muted">Alunos da FAT tem desconto na compra do ingresso</small>
+                            <small id="registerHelpBlock" class="form-text text-muted"></small>
                             {!! $errors->first('fat_register', '<span class="invalid-feedback">:message</span>') !!}
                         </div>
                         <div class="form-group">

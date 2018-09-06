@@ -4,5 +4,5 @@
 Pagamento da inscrição efetuado com sucesso!
 
 Atenciosamente,<br>
-Semana Tech {{date('Y')}}
+{{ config('app.name') }} {{date('Y')}}
 @endcomponent

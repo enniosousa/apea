@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Discount extends Model {
 
-    private static $price = 30.00;
+    private static $price = 40.00;
     private static $discounts = [
-        'early' => [
+        /*'early' => [
             'start' => '2017-09-01',
             'end' => '2017-09-30',
             'value' => 5.00 //valor em reais (não é porcentagem)
         ],
         'fat' => [
             'value' => 10.00 //valor em reais (não é porcentagem)
-        ],
+        ],*/
     ];
 
     /**
@@ -37,9 +37,10 @@ class Discount extends Model {
     }
 
     public static function earlyDiscount() {
-        $start = self::$discounts['early']['start'];
-        $end = self::$discounts['early']['end'];
-        if (self::isInDateInterval($start, $end)) {
+        $start = self::$discounts['early']['start'] ?? false;
+        $end = self::$discounts['early']['end'] ?? false;
+
+        if ($start && $end && self::isInDateInterval($start, $end)) {
             return self::$discounts['early']['value'];
         }
         return 0.00;
@@ -47,7 +48,7 @@ class Discount extends Model {
 
     public static function fatDiscount() {
         if (\Auth::user()->fat_register) {
-            return self::$discounts['fat']['value'];
+            return self::$discounts['fat']['value'] ?? 0.00;
         }
         return 0.00;
     }

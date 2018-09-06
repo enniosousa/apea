@@ -8,5 +8,5 @@ Pagar a inscrição
 @endcomponent
 
 Atenciosamente,<br>
-Semana Tech {{date('Y')}}
+{{ config('app.name') }} {{date('Y')}}
 @endcomponent

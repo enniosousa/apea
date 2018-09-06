@@ -11,12 +11,13 @@ class EnroledsController extends Controller {
         ->select([
           'enrols.id as enrol_id',
           'enrols.present as enrol_present',
-			'enrols.code as enrol_code',
+			    'enrols.code as enrol_code',
           'users.name as user_name',
 					'users.pagseguro_value as value',
           'users.fat_register as fat_register',
           'users.pagseguro_status_name as pagseguro_status_name',
-	        'activities.name as activity_name',
+          'activities.name as activity_name',
+          'enrols.created_at',
         ])
         ->join('activities', 'activities.id', '=', 'enrols.activity_id')
         ->join('users', 'users.id', '=', 'enrols.user_id')

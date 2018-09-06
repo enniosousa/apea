@@ -9,6 +9,7 @@
     color: white;
 }
 </style>
+<!--
 <section class="mbr-section mbr-section-hero mbr-section-full mbr-section-with-arrow mbr-parallax-background mbr-after-navbar" 
          id="header1-15" 
          data-rv-view="294" 
@@ -36,7 +37,7 @@
 	</div>
 	<div class="mbr-arrow mbr-arrow-floating" aria-hidden="true"><a href="#extHeader15-1"><i class="mbr-arrow-icon"></i></a></div>
 </section>
-<!--
+-->
 <section class="mbr-section mbr-section-hero mbr-section-full extHeader15 mbr-after-navbar" 
          id="extHeader15-1" 
          data-rv-view="4" 
@@ -53,15 +54,14 @@
                     </div>
                 </div>
                 <div class="mbr-section-text lead text-center">
-                    <p>A Semana Tech é um evento de tecnologia realizado pela coordenação, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores da Faculdade Anísio Teixeira.</p>
+                    <p>A Semana SER é um evento realizado pelos cursos de Sistemas para Internet, Rede de Computadores e Engenharia de Produção da Faculdade Anísio Teixeira de Feira de Santana</p>
                 </div>
-                <div class="countdown" data-end="2017/10/23"></div>
+                <div class="countdown" data-end="2018/10/22"></div>
             </div>
         </div>
     </div>
     <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#msg-box3-g"><i class="mbr-arrow-icon"></i></a></div>
 </section>
--->
 
 <!-- times do concurso de ideias inovadoras [inicio] -->
 <section class="mbr-section mbr-section__container article" id="header3-v" data-rv-view="62" style="background-color: rgb(255, 255, 255); padding-top: 80px; padding-bottom: 20px;">
@@ -203,13 +203,13 @@
                             </div>
                             <span class="iconBackground"><span class="icon"></span></span>
                             <div class="timeline-panel">
-                                <h4 class="h-black text-right">{{$loop->iteration}}. {{$activity->name}}</h4>
+                                <h4 class="h-black text-right">{{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black activity-description">
                                     @if($activity->name == 'Mesa Redonda: TI para a Sociedade')
                                         <b>Os participantes serão {{$activity->speaker}}</b><br>
                                         {!!$activity->description!!}
                                     @else
-                                        <b>{{$activity->type}} ministrada por {{$activity->speaker}}</b><br>
+                                        <b>{{$activity->type === 'Palestra' ? "Palestra ministrada por $activity->speaker" : "Minicurso ministrado por $activity->speaker"}}</b><br>
                                         {!!$activity->description!!}
                                     @endif
                                 </p>
@@ -230,13 +230,13 @@
                                 </p>
                             </div>
                             <div class="timeline-panel">
-                                <h4 class="h-black">{{$loop->iteration}}. {{$activity->name}}</h4>
+                                <h4 class="h-black">{{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black">
                                     @if($activity->name == 'Mesa Redonda: TI para a Sociedade')
                                         <b>Os participantes serão {{$activity->speaker}}</b><br>
                                         {!!$activity->description!!}
                                     @else
-                                        <b>{{$activity->type}} ministrada por {{$activity->speaker}}</b><br>
+                                        <b>{{$activity->type === 'Palestra' ? "Palestra ministrada por $activity->speaker" : "Minicurso ministrado por $activity->speaker"}}</b><br>
                                         {!!$activity->description!!}
                                     @endif
                                 </p>

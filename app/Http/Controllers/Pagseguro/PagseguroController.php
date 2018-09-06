@@ -31,7 +31,7 @@ class PagseguroController extends Controller {
         'items' => [
             [
                 'id' => '1',
-                'description' => 'Ingresso da Semana Tech',
+                'description' => 'Ingresso da Semana SER 2018',
                 'quantity' => '1',
                 'amount' => \App\Discount::total(),
                 'maxAge' => 86400 * 2, //86400 = 1 dia

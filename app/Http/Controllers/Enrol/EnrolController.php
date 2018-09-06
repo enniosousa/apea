@@ -10,6 +10,18 @@ class EnrolController extends Controller {
 
     public function create(EnrolRequest $request) {
         $activities = array_merge(array_values($request->Palestra), [$request->Minicurso]);
+        $activities = collect($activities)
+                        ->mapWithKeys(function($item){
+                            return [
+                                $item=> [
+                                    'code'=> \Uuid::generate(),
+                                ]
+                            ];
+                        })
+                        ->toArray()
+        ;
+
+
         \Auth::user()->enrols()->sync($activities);
         
         //incrições gratuitas tem o email @semantech.invalid
