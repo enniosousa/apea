@@ -14,8 +14,16 @@
         color: white !important;
     }
 </style>
+<?php
+    $is_local_app = env('APP_ENV', null) === 'local' ? true : false;
+?>
+        @if($is_local_app)
+            <div class="alert alert-danger" role="alert" style="width: 100%;text-align: center;position: fixed;top: 0;left: 0;z-index: 9;">
+                Esta aplicação está em testes. Nenhuma inscrição realizada será mantida após os testes.
+            </div>
+        @endif
 <section id="ext_menu-0" data-rv-view="0">
-    <nav class="navbar navbar-dropdown navbar-fixed-top">
+    <nav class="navbar navbar-dropdown navbar-fixed-top" style="<?= $is_local_app ? 'margin-top: 60px;' : '' ?>">
         <div class="container">
 
             <div class="mbr-table">
