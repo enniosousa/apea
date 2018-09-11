@@ -21,10 +21,8 @@ class CreateEnrolsTable extends Migration
 			$table->uuid('code');
             $table->timestamps();
             
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('activity_id')->references('id')->on('activities')
-                ->onUpdate('cascade')->onDelete('cascade');
+            //$table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            //$table->foreign('activity_id')->references('id')->on('activities')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

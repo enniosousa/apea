@@ -18,12 +18,9 @@ class CreateAnswerQuestionTable extends Migration
             $table->integer('question_id')->unsigned();            
             $table->integer('answer_id')->unsigned();
             
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('question_id')->references('id')->on('questions')
-                ->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('answer_id')->references('id')->on('answers')
-                ->onUpdate('cascade')->onDelete('cascade');
+            //$table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            //$table->foreign('question_id')->references('id')->on('questions')->onUpdate('cascade')->onDelete('cascade');
+            //$table->foreign('answer_id')->references('id')->on('answers')->onUpdate('cascade')->onDelete('cascade');
             
             $table->primary(['user_id', 'question_id', 'answer_id']);
         });
@@ -37,9 +34,9 @@ class CreateAnswerQuestionTable extends Migration
     public function down()
     {
         Schema::table('answer_question', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-            $table->dropForeign(['question_id']);
-            $table->dropForeign(['answer_id']);
+            //$table->dropForeign(['user_id']);
+            //$table->dropForeign(['question_id']);
+            //$table->dropForeign(['answer_id']);
             
             $table->dropPrimary(['user_id', 'question_id', 'answer_id']);
         });

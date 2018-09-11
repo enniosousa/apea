@@ -33,8 +33,7 @@ class CreateActivitiesTable extends Migration {
             $table->datetime('end');
             $table->timestamps();
 
-            $table->foreign('activity_id')->references('id')->on('activities')
-                    ->onUpdate('cascade')->onDelete('cascade');
+            //$table->foreign('activity_id')->references('id')->on('activities')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -44,9 +43,7 @@ class CreateActivitiesTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::table('activities_dates', function(Blueprint $table) {
-            $table->dropForeign(['activity_id']);
-        });
+        //Schema::table('activities_dates', function(Blueprint $table) {$table->dropForeign(['activity_id']);});
         Schema::dropIfExists('activities_dates');
         Schema::dropIfExists('activities');
     }
