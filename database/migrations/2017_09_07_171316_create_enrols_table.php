@@ -18,6 +18,7 @@ class CreateEnrolsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('activity_id');
             $table->boolean('present')->default(false);
+			$table->uuid('code');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')

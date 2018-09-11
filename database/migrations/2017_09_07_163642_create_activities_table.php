@@ -20,6 +20,9 @@ class CreateActivitiesTable extends Migration {
             $table->string('type');
             $table->unsignedSmallInteger('vacancies');
             $table->string('place');
+			$table->unsignedTinyInteger('workload');
+            $table->boolean('has_certificate')->default(true);
+            $table->boolean('auto_enrol')->default(false);
             $table->timestamps();
         });
 
