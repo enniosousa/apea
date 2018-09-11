@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Discount extends Model {
 
-    private static $price = 40.00;
+    private static $price = 30.00;
     private static $discounts = [
         /*'early' => [
             'start' => '2017-09-01',
