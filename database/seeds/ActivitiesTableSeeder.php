@@ -24,6 +24,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-22 19:00', 'end' => '2018-10-22 20:20'],
                 ],
                 'place' => 'Auditório',
+				'workload'=> 0,
+				'has_certificate'=> false,
+				'auto_enrol'=> true,
             ],
             [
                 'name' => 'O profissional do Futuro na Indústria',
@@ -35,6 +38,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-22 20:40', 'end' => '2018-10-22 22:00'],
                 ],
                 'place' => 'Auditório',
+				'workload'=> 0,
+				'has_certificate'=> false,
+				'auto_enrol'=> true,
             ],
             /*
              * Minicursos
@@ -51,6 +57,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Laboratório 1',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Excel',
@@ -63,6 +72,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Laboratório 2',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Word',
@@ -75,6 +87,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Laboratório 3',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'MS Project',
@@ -87,6 +102,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Laboratório 4',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Routeroard',
@@ -99,6 +117,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Laboratório 5',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
 
             /*
@@ -116,6 +137,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Sala 1',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Canvas',
@@ -128,6 +152,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Sala 2',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Automação Residencial',
@@ -140,6 +167,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Sala 3',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Projeto',
@@ -152,6 +182,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Sala 4',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Economia e Meio Ambiente',
@@ -164,6 +197,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Sala 5',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Economia e Meio Ambiente',
@@ -176,6 +212,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Sala 6',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
             [
                 'name' => 'Apontamentos para trabalhos conclusão de cursos',
@@ -188,6 +227,9 @@ class ActivitiesTableSeeder extends Seeder {
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
                 ],
                 'place' => 'Sala 7',
+				'workload'=> 10,
+				'has_certificate'=> true,
+				'auto_enrol'=> false,
             ],
 
         ];
