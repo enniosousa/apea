@@ -8,7 +8,7 @@
 				   value="{{$activity->id}}" 
 				   type="radio" 
 				   class="custom-control-input"
-				   <?php if(in_array($activity->id, \Auth::user()->enrolsIds()) || old('Minicurso') == $activity->id): ?> checked <?php endif; ?>
+				   <?php if(in_array($activity->id, \Auth::user()->enrolsIds()) || old('Minicurso') == $activity->id || $activity->auto_enrol): ?> checked <?php endif; ?>
 					>
 			   @else
 					<input 
@@ -16,8 +16,12 @@
 				   value="{{$activity->id}}" 
 				   type="checkbox" 
 				   class="custom-control-input"
-					<?php if(in_array($activity->id, \Auth::user()->enrolsIds()) || old("Palestra.{$activity->id}")): ?> checked <?php endif; ?>
+					<?php if(in_array($activity->id, \Auth::user()->enrolsIds()) || old("Palestra.{$activity->id}") || $activity->auto_enrol): ?> checked <?php endif; ?>
+					<?= $activity->auto_enrol ? 'disabled' : '' ?>
 					>
+				@endif
+				@if($activity->auto_enrol)
+					<input name="Palestra[]" value="{{$activity->id}}" type="hidden">
 				@endif
 			@else
 			<input type="{{$activity->type === 'Minicurso' ? 'radio' : 'checkbox'}}" class="custom-control-input" disabled>

@@ -1,6 +1,6 @@
 @extends('template.public.index')
-@section('metaTitle', 'Semana Tech 2017 - Semana de Tecnologia da FAT')
-@section('metaDescription', 'A Semana Tech é o evento de tenologia da Faculdade Anísio Teixeira pela coordenação, professores e alunos dos cursos de Sistemas para Internet e Redes de Computadores')
+@section('metaTitle', 'Semana SER 2018 - Semana de Sistemas, Engenharia e Redes da FAT')
+@section('metaDescription', 'A Semana SER é o evento de tenologia da Faculdade Anísio Teixeira pela coordenação, professores e alunos dos cursos de Sistemas para Internet, Engenharia de Produção e Redes de Computadores')
 @section('page')
 <style>
 .btn-black-outline {
@@ -63,7 +63,7 @@
     <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#msg-box3-g"><i class="mbr-arrow-icon"></i></a></div>
 </section>
 
-<!-- times do concurso de ideias inovadoras [inicio] -->
+<!-- times do concurso de ideias inovadoras [inicio]
 <section class="mbr-section mbr-section__container article" id="header3-v" data-rv-view="62" style="background-color: rgb(255, 255, 255); padding-top: 80px; padding-bottom: 20px;">
     <div class="container">
         <div class="row">
@@ -142,7 +142,7 @@
         </div>
     </div>
 </section>
-<!-- times do concursod de ideias inovadoras [fim] -->
+times do concursod de ideias inovadoras [fim] -->
 
 <!--
 <section class="mbr-section article" id="msg-box3-g" data-rv-view="11" style="background-color: rgb(242, 242, 242); padding-top: 120px; padding-bottom: 120px;">
@@ -249,8 +249,9 @@
         </div>
     </div>
 </section>
-<section class="mbr-section mbr-section__container" id="buttons1-s" data-rv-view="54" style="background-color: rgb(46, 46, 46); padding-top: 20px; padding-bottom: 20px;">
 
+<!--
+<section class="mbr-section mbr-section__container" id="buttons1-s" data-rv-view="54" style="background-color: rgb(46, 46, 46); padding-top: 20px; padding-bottom: 20px;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
@@ -260,8 +261,8 @@
             </div>
         </div>
     </div>
-
 </section>
+-->
 
 
 
