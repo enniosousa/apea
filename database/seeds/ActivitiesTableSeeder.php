@@ -51,7 +51,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'João Ronaldo Tavares de Vasconcellos Júnior',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -66,7 +66,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Arivaldo Ferreira Brito',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -81,7 +81,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Eng. Flavio Jorge Miranda Pimentel',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -96,7 +96,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'A DEFINIR',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -111,7 +111,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Kleverton Moises Silva',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -131,7 +131,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Andreia Ferreira Alves Carneiro',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -146,7 +146,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Jamylle Santana da Fonseca / Renata Milena dos Anjos',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -161,7 +161,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Weber Costa Pinto dos Anjos',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -176,7 +176,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Fabio Martins da Silva',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -191,7 +191,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Érico Rodrigo Mineiro Pereira',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -206,7 +206,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'André Francisco Peruna de Azevedo',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
@@ -221,7 +221,7 @@ class ActivitiesTableSeeder extends Seeder {
                 'speaker' => 'Rejanne Ramos e Silvia Gusmão',
                 'description' => '',
                 'type' => 'Minicurso',
-                'vacancies' => '30',
+                'vacancies' => '40',
                 'date' => [
                     ['start' => '2018-10-23 18:30', 'end' => '2018-10-23 22:00'],
                     ['start' => '2018-10-24 18:30', 'end' => '2018-10-24 22:00'],
