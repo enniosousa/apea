@@ -192,7 +192,7 @@ times do concursod de ideias inovadoras [fim] -->
                             <div class="date date-normal">
                                 <p class="mbr-section-text-gray lead h-black">
                                     @forelse($activity->dates as $date)
-                                        {{$date->start->format('d/m/Y')}} das {{$date->start->format('H:m')}} às {{$date->end->format('H:m')}}
+                                        {{$date->start->format('d/m/Y')}} das {{$date->start->format('H:i')}} às {{$date->end->format('H:i')}}
                                         @if($loop->count > 1)
                                             <br>
                                         @endif
@@ -205,13 +205,9 @@ times do concursod de ideias inovadoras [fim] -->
                             <div class="timeline-panel">
                                 <h4 class="h-black text-right">{{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black activity-description">
-                                    @if($activity->name == 'Mesa Redonda: TI para a Sociedade')
-                                        <b>Os participantes serão {{$activity->speaker}}</b><br>
-                                        {!!$activity->description!!}
-                                    @else
-                                        <b>{{$activity->type === 'Palestra' ? "Palestra ministrada por $activity->speaker" : "Minicurso ministrado por $activity->speaker"}}</b><br>
-                                        {!!$activity->description!!}
-                                    @endif
+                                    <?php $activity_gender = in_array($activity->type, ['Palestra', 'Apresentação', 'Mesa redonda']) ? 'a' : 'o' ?>
+                                    <b><?= "$activity->type ministrad$activity_gender por $activity->speaker" ?></b><br>
+                                    {!!$activity->description!!}
                                 </p>
                             </div>
                         </li>
@@ -220,7 +216,7 @@ times do concursod de ideias inovadoras [fim] -->
                             <div class="date date-inverted">
                                 <p class="mbr-section-text-gray lead h-black">
                                     @forelse($activity->dates as $date)
-                                        {{$date->start->format('d/m/Y')}} das {{$date->start->format('H:m')}} às {{$date->end->format('H:m')}}
+                                        {{$date->start->format('d/m/Y')}} das {{$date->start->format('H:i')}} às {{$date->end->format('H:i')}}
                                         @if($loop->count > 1)
                                             <br>
                                         @endif
@@ -232,13 +228,9 @@ times do concursod de ideias inovadoras [fim] -->
                             <div class="timeline-panel">
                                 <h4 class="h-black">{{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black">
-                                    @if($activity->name == 'Mesa Redonda: TI para a Sociedade')
-                                        <b>Os participantes serão {{$activity->speaker}}</b><br>
-                                        {!!$activity->description!!}
-                                    @else
-                                        <b>{{$activity->type === 'Palestra' ? "Palestra ministrada por $activity->speaker" : "Minicurso ministrado por $activity->speaker"}}</b><br>
-                                        {!!$activity->description!!}
-                                    @endif
+                                    <?php $activity_gender = in_array($activity->type, ['Palestra', 'Apresentação', 'Mesa redonda']) ? 'a' : 'o' ?>
+                                    <b><?= "$activity->type ministrad$activity_gender por $activity->speaker" ?></b><br>
+                                    {!!$activity->description!!}
                                 </p>
                             </div>
                             <span class="iconBackgroundInverse"><span class="icon"></span></span>

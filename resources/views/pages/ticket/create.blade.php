@@ -1,22 +1,21 @@
 {!! Form::open(['action' => 'Enrol\EnrolController@create']) !!}
 <div class="container carrinho">
      @include('flash::message') 
-    <div class="col-md-6">
-        <div class="list-group">
-            <p class="h2">Minicursos</p>
-           {!! $errors->first('Minicurso', '<div class="alert alert-warning">:message</div>') !!}
-            @each('pages.ticket.item', \App\Activity::where('type', 'Minicurso')->get(), 'activity')
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="list-group">
-            <p class="h2">Palestras</p>
-            {!! $errors->first('Palestra', '<div class="alert alert-warning">:message</div>') !!}
-            @each('pages.ticket.item', \App\Activity::where('type', 'Palestra')->get(), 'activity')
-        </div>
-    </div>
+    <?php
+        $activities_types = \App\Activity::select('type')->distinct()->orderBy('type')->get()->pluck('type')->toArray();
+    ?>
 
-    <div class="col-md-6">
+    @foreach($activities_types as $activity)
+    <div class="col-md-6 grid-item" style="margin-bottom: 2rem;">
+            <div class="list-group">
+                <p class="h2">{{$activity}}</p>
+                {!! $errors->first($activity, '<div class="alert alert-warning">:message</div>') !!}
+                @each('pages.ticket.item', \App\Activity::where('type', $activity)->get(), 'activity')
+            </div>
+        </div>
+    @endforeach
+
+    <div class="col-md-6 grid-item">
         <div class="list-group">
             <br>
             <p class="h2">Checkout</p>
@@ -42,7 +41,8 @@
         </div>
     </div>
 </div>
-{!! Form::close() !!} @push('style')
+{!! Form::close() !!}
+@push('style')
 <style>
     .carrinho {
         margin-bottom: 1em;
@@ -65,4 +65,17 @@
         border-radius: .25rem;
     }
 </style>
+@endpush
+
+@push('scripts')
+<script>
+$(document).ready(function(){
+    $('.container.carrinho').masonry({
+        itemSelector: '.container.carrinho>*',
+        columnWidth: '.col-md-6',
+        percentPosition: true,
+        fitWidth: true,
+    });
+});
+</script>
 @endpush

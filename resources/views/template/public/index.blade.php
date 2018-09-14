@@ -59,7 +59,8 @@
         <!-- jquery confirm -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
-        <input name="animation" type="hidden">
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+        <!--<input name="animation" type="hidden">-->
         @stack('scripts')
         @if(config('app.env') === 'production')
             <!-- Global Site Tag (gtag.js) - Google Analytics -->

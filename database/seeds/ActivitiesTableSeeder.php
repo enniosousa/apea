@@ -107,7 +107,7 @@ class ActivitiesTableSeeder extends Seeder {
 				'auto_enrol'=> false,
             ],
             [
-                'name' => 'Routeroard',
+                'name' => 'Routerboard',
                 'speaker' => 'Kleverton Moises Silva',
                 'description' => '',
                 'type' => 'Minicurso',
@@ -202,8 +202,8 @@ class ActivitiesTableSeeder extends Seeder {
 				'auto_enrol'=> false,
             ],
             [
-                'name' => 'Economia e Meio Ambiente',
-                'speaker' => 'Érico Rodrigo Mineiro Pereira',
+                'name' => 'Trabalhando sua ideia de forma criativa – Marketing Digital',
+                'speaker' => 'André Francisco Peruna de Azevedo',
                 'description' => '',
                 'type' => 'Minicurso',
                 'vacancies' => '30',
@@ -230,6 +230,40 @@ class ActivitiesTableSeeder extends Seeder {
 				'workload'=> 10,
 				'has_certificate'=> true,
 				'auto_enrol'=> false,
+            ],
+            /*
+             * MESA REDONDA
+             */
+            [
+                'name' => 'Mesa Redonda',
+                'speaker' => 'João Ronaldo Tavares de Vasconcellos Júnior',
+                'description' => '',
+                'type' => 'Mesa redonda',
+                'vacancies' => '200',
+                'date' => [
+                    ['start' => '2018-10-25 18:30', 'end' => '2018-10-25 22:00'],
+                ],
+                'place' => 'Auditório',
+				'workload'=> 0,
+				'has_certificate'=> false,
+				'auto_enrol'=> true,
+            ],
+            /*
+             * APRESENTAÇÔES
+             */
+            [
+                'name' => 'Apresentações',
+                'speaker' => '',
+                'description' => '<ul><li>Trabalhos</li><li>Empresas</li></ul>',
+                'type' => 'Apresentação',
+                'vacancies' => '200',
+                'date' => [
+                    ['start' => '2018-10-26 18:30', 'end' => '2018-10-26 22:00'],
+                ],
+                'place' => 'Auditório',
+				'workload'=> 0,
+				'has_certificate'=> false,
+				'auto_enrol'=> true,
             ],
 
         ];
