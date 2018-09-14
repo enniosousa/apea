@@ -29,9 +29,9 @@ class UsersRolesAndPermissionsTable extends Seeder {
         $admin->roles()->sync($adminRole);
         
         $vasconcellosData = [
-            'name' => 'Vasconcellos',
-            'email' => 'jvasconcellosjr@uol.com.br',
-            'password' => bcrypt('jvasconcellosjr'),
+            'name' => 'Ed Weine',
+            'email' => 'edsantana.eng@gmail.com',
+            'password' => bcrypt('edsantana.eng@gmail.com'),
             'fat_register' => null,
         ];
         $vasconcellos = \App\User::create($vasconcellosData);
