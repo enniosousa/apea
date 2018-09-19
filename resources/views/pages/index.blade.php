@@ -9,6 +9,18 @@
     color: white;
 }
 </style>
+
+<?php
+    function apresentador(string $tipo = null){
+        switch (str_slug($tipo)) {
+            case 'minicurso': return 'ministrado'; break;
+            case 'mesa-redonda': return 'mediada'; break;
+            case 'palestra': return 'ministrada'; break;
+            case 'apresentacoes': return 'ministradas'; break;
+            default: return 'ministrado'; break;
+        }
+    }
+?>
 <!--
 <section class="mbr-section mbr-section-hero mbr-section-full mbr-section-with-arrow mbr-parallax-background mbr-after-navbar" 
          id="header1-15" 
@@ -205,8 +217,8 @@ times do concursod de ideias inovadoras [fim] -->
                             <div class="timeline-panel">
                                 <h4 class="h-black text-right">{{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black activity-description">
-                                    <?php $activity_gender = in_array($activity->type, ['Palestra', 'Apresentação', 'Mesa redonda']) ? 'a' : 'o' ?>
-                                    <b><?= "$activity->type ministrad$activity_gender por $activity->speaker" ?></b><br>
+                                    <?php $activity_gender = apresentador($activity->type); ?>
+                                    <b><?= "$activity->type $activity_gender por $activity->speaker" ?></b><br>
                                     {!!$activity->description!!}
                                 </p>
                             </div>
@@ -228,8 +240,8 @@ times do concursod de ideias inovadoras [fim] -->
                             <div class="timeline-panel">
                                 <h4 class="h-black">{{$activity->name}}</h4>
                                 <p class="mbr-section-text-gray lead h-black">
-                                    <?php $activity_gender = in_array($activity->type, ['Palestra', 'Apresentação', 'Mesa redonda']) ? 'a' : 'o' ?>
-                                    <b><?= "$activity->type ministrad$activity_gender por $activity->speaker" ?></b><br>
+                                    <?php $activity_gender = apresentador($activity->type); ?>
+                                    <b><?= "$activity->type $activity_gender por $activity->speaker" ?></b><br>
                                     {!!$activity->description!!}
                                 </p>
                             </div>
