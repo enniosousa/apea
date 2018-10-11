@@ -25,6 +25,11 @@ class PagseguroController extends Controller {
         ]);
 
         \Mail::to($u->email)->queue($message);
+
+        // Cancelar inscrição quando o status do pagamento for 'Cancelada'
+        if(trim($u->pagseguro_status_name) === 'Cancelada'){
+            $u->enrolCancel();
+        }
     }
   
   public static function checkout(){

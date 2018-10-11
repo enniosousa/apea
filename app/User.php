@@ -43,4 +43,17 @@ class User extends Authenticatable {
         return $userEnrols;
     }
 
+    public function enrolCancel(){
+        //cancelar inscrição nas atividades
+        $this->enrols()->sync([]);
+
+        //remover informações do pagseguro
+        $this->pagseguro_code = null;
+        $this->pagseguro_link = null;
+        $this->pagseguro_status_code = null;
+        $this->pagseguro_status_name = null;
+        $this->pagseguro_value = null;
+        return $this->save();
+    }
+
 }
