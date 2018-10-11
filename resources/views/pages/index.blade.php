@@ -75,6 +75,76 @@
     <div class="mbr-arrow mbr-arrow-floating hidden-sm-down" aria-hidden="true"><a href="#msg-box3-g"><i class="mbr-arrow-icon"></i></a></div>
 </section>
 
+<section class="mbr-slider mbr-section mbr-section-nopadding carousel slide extTestimonials1 extTestimonials3 extTestimonials5" data-ride="carousel" data-keyboard="false" data-wrap="true" data-interval="5000" data-pause="false" id="extTestimonials5-3"
+    data-rv-view="17" style="background-image: url(assets/images/flight-mountains-sky-flying.jpg); padding-top: 80px; padding-bottom: 40px;">
+    <div class="mbr-section__container mbr-section__container--middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-xs-center">
+                    <h3 class="mbr-section-title display-2">PATROCINADORES & PARCEIROS</h3>
+                    <small class="mbr-section-subtitle">Todos aqueles que nos apoiam e fazem o evento acontecer</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container boxed-slider">
+        <div>
+            <?php
+            $patrocinadores = [
+                (object) [
+                    'logo'=> 'assets/images/logos/ennio-sousa_500x500.png',
+                    'link'=> 'https://enniosousa.com.br'
+                ],
+                (object) [
+                    'logo'=> 'assets/images/logos/tabajara_500x500.png',
+                    'link'=> 'https://moinhotabajara.com.br/'
+                ],
+                (object) [
+                    'logo'=> 'assets/images/logos/fat_500x500.png',
+                    'link'=> 'http://fat.edu.br/'
+                ],
+                /*(object) [
+                    'logo'=> 'assets/images/2.png',
+                    'link'=> 'javascript://'
+                ],
+                (object) [
+                    'logo'=> 'assets/images/3.png',
+                    'link'=> 'javascript://'
+                ],*/
+            ];
+            
+            ?>
+            <ol class="carousel-indicators">
+                @forelse($patrocinadores as $p)
+                    <li data-app-prevent-settings="" 
+                        data-target="#extTestimonials5-3" 
+                        class="{{$loop->index === 0 ? 'active' : ''}}" 
+                        data-slide-to="{{$loop->index}}"></li>
+                @endforeach
+            </ol>
+            <div class="carousel-inner" role="listbox" data-visible="5">
+                @forelse($patrocinadores as $p)
+                <div class="carousel-item {{$loop->index === 0 ? 'active' : ''}}">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="wrap-img"><a href="{{$p->link}}" target="_blank"><img src="{{$p->logo}}"></a></div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#extTestimonials5-3">
+                <span class="icon-prev" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#extTestimonials5-3">
+                <span class="icon-next" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- times do concurso de ideias inovadoras [inicio]
 <section class="mbr-section mbr-section__container article" id="header3-v" data-rv-view="62" style="background-color: rgb(255, 255, 255); padding-top: 80px; padding-bottom: 20px;">
     <div class="container">
@@ -263,81 +333,6 @@ times do concursod de ideias inovadoras [fim] -->
                     <span class="etl-icon icon-download mbr-iconfont mbr-iconfont-btn"></span>BAIXAR A PROGRAMAÇÃO</a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
--->
-
-
-
-
-<!--
-<section class="mbr-slider mbr-section mbr-section-nopadding carousel slide extTestimonials1 extTestimonials3 extTestimonials5" data-ride="carousel" data-keyboard="false" data-wrap="true" data-interval="5000" data-pause="false" id="extTestimonials5-3"
-    data-rv-view="17" style="background-image: url(assets/images/flight-mountains-sky-flying.jpg); padding-top: 80px; padding-bottom: 40px;">
-    <div class="mbr-section__container mbr-section__container--middle">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 text-xs-center">
-                    <h3 class="mbr-section-title display-2">PATROCINADORES</h3>
-                    <small class="mbr-section-subtitle">Todos aqueles que nos apoiam e fazem o evento acontecer</small>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container boxed-slider">
-        <div>
-            <?php
-            $patrocinadores = [
-                (object) [
-                    'logo'=> 'http://placehold.jp/100/cccccc/ffffff/150x150.png?text=ES',
-                    'link'=> 'https://enniosousa.com.br'
-                ],
-                (object) [
-                    'logo'=> 'http://fat.edu.br/imagens/marca-fat-faculdade.png',
-                    'link'=> 'http://fat.edu.br/'
-                ],
-                (object) [
-                    'logo'=> 'assets/images/1.png',
-                    'link'=> 'javascript://'
-                ],
-                (object) [
-                    'logo'=> 'assets/images/2.png',
-                    'link'=> 'javascript://'
-                ],
-                (object) [
-                    'logo'=> 'assets/images/3.png',
-                    'link'=> 'javascript://'
-                ],
-            ];
-            
-            ?>
-            <ol class="carousel-indicators">
-                @forelse($patrocinadores as $p)
-                    <li data-app-prevent-settings="" 
-                        data-target="#extTestimonials5-3" 
-                        class="{{$loop->index === 0 ? 'active' : ''}}" 
-                        data-slide-to="{{$loop->index}}"></li>
-                @endforeach
-            </ol>
-            <div class="carousel-inner" role="listbox" data-visible="5">
-                @forelse($patrocinadores as $p)
-                <div class="carousel-item {{$loop->index === 0 ? 'active' : ''}}">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="wrap-img"><a href="{{$p->link}}" target="_blank"><img src="{{$p->logo}}"></a></div>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#extTestimonials5-3">
-                <span class="icon-prev" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#extTestimonials5-3">
-                <span class="icon-next" aria-hidden="true"></span>
-                <span class="sr-only">Próximo</span>
-            </a>
         </div>
     </div>
 </section>
