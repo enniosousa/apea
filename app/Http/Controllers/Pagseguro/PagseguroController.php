@@ -19,8 +19,9 @@ class PagseguroController extends Controller {
         $u->save();
         
         
-        $message = (new \App\Mail\PaymentConfirmation())->with([
+        $message = (new \App\Mail\PaymentStatusChange())->with([
             'name'=> $u->name,
+            'status'=> $u->pagseguro_status_name,
         ]);
 
         \Mail::to($u->email)->queue($message);

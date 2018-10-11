@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class PaymentConfirmation extends Mailable
+class PaymentStatusChange extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,6 +28,7 @@ class PaymentConfirmation extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.paymentConfirmation')->subject('Confirmação de pagamento da inscrição na Semana Tech');
+        return $this->markdown('emails.paymentStatusChange')
+                    ->subject(config('app.name').': O status da sua inscrição mudou!');
     }
 }
