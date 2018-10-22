@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 class EnrolController extends Controller {
 
     public function create(EnrolRequest $request) {
+        return view('pages.endEnrols');
+
         $activities = array_merge(array_values($request->Palestra), [$request->Minicurso]);
         $activities = collect($activities)
                         ->mapWithKeys(function($item){
@@ -39,6 +41,8 @@ class EnrolController extends Controller {
     }
 
     public function update(EnrolRequest $request) {
+        return view('pages.endEnrols');
+
         $activities = array_merge(array_values($request->Palestra), [$request->Minicurso]);
         \Auth::user()->enrols()->sync($activities);
         flash('Inscrição atualizada com sucesso!')->success();

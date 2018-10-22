@@ -27,6 +27,7 @@ class PublicPagesController extends Controller {
     }
 
     public function ticket() {
+        return $this->endEnrols();
         return view('pages.ticket');
     }
     
