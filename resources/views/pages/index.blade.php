@@ -151,6 +151,14 @@
                     'logo'=> 'https://imgplaceholder.com/200x200/transparent?text=VM Lux_br_Representações',
                     'link'=> 'javascript://'
                 ],
+                (object) [
+                    'logo'=> 'https://imgplaceholder.com/200x200/transparent?text=Sther Araújo_br_e Banda',
+                    'link'=> 'javascript://'
+                ],
+                (object) [
+                    'logo'=> 'https://imgplaceholder.com/200x200/transparent?text=William Dicastro',
+                    'link'=> 'javascript://'
+                ],
             ];
             
             ?>
