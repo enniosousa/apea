@@ -53,3 +53,8 @@ Route::group(['as' => 'pagseguro.', 'prefix' => 'pagseguro'], function() {
     Route::post('notification', ['as' => 'notification', 'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification']);
 });
 
+Route::group(['namespace' => 'Frontend', 'where' => ['path' => '^.*\.(jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG)$']], function() {
+    Route::get('/f{fit}/{path}', 'RedimencionamentoController@fit');
+    Route::get('/w{width}/{path}', 'RedimencionamentoController@width');
+    Route::get('/h{height}/{path}', 'RedimencionamentoController@height');
+});

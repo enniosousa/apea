@@ -159,6 +159,7 @@ return [
         laravel\pagseguro\Platform\Laravel5\ServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         
     ],
     /*
@@ -211,6 +212,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'PagSeguro' => laravel\pagseguro\Platform\Laravel5\PagSeguro::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
         
     ],
 ];
