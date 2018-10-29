@@ -92,25 +92,65 @@
             <?php
             $patrocinadores = [
                 (object) [
-                    'logo'=> 'assets/images/logos/ennio-sousa_500x500.png',
+                    'logo'=> 'f174/assets/images/logos/ennio-sousa_500x500.png',
                     'link'=> 'https://enniosousa.com.br'
                 ],
                 (object) [
-                    'logo'=> 'assets/images/logos/tabajara_500x500.png',
+                    'logo'=> 'f174/assets/images/logos/tabajara_500x500.png',
                     'link'=> 'https://moinhotabajara.com.br/'
                 ],
                 (object) [
-                    'logo'=> 'assets/images/logos/fat_500x500.png',
+                    'logo'=> 'f174/assets/images/logos/fat_500x500.png',
                     'link'=> 'http://fat.edu.br/'
                 ],
-                /*(object) [
-                    'logo'=> 'assets/images/2.png',
+                (object) [
+                    'logo'=> 'f174/assets/images/logos/casa-do-chefe.jpeg',
                     'link'=> 'javascript://'
                 ],
                 (object) [
-                    'logo'=> 'assets/images/3.png',
+                    'logo'=> 'f174/assets/images/logos/doces-e-delicias.jpeg',
                     'link'=> 'javascript://'
-                ],*/
+                ],
+                (object) [
+                    'logo'=> 'f174/assets/images/logos/larissa-araujo.jpeg',
+                    'link'=> 'javascript://skina-do-preco.jpeg'
+                ],
+                (object) [
+                    'logo'=> 'f174/assets/images/logos/texas.jpeg',
+                    'link'=> 'http://www.texasseguros.com.br/'
+                ],
+                (object) [
+                    'logo'=> 'f174/assets/images/logos/torre-telecon.gif',
+                    'link'=> 'http://torretelecom.com.br/'
+                ],
+                (object) [
+                    'logo'=> 'f174/assets/images/logos/speed-informatica.jpg',
+                    'link'=> 'http://www.speedinformatica.com.br/'
+                ],
+                (object) [
+                    'logo'=> 'f174/assets/images/logos/apthouse.png',
+                    'link'=> 'http://www.apthouse.com.br/'
+                ],
+                (object) [
+                    'logo'=> 'f174/assets/images/logos/pirelli.png',
+                    'link'=> 'https://www.pirelli.com/'
+                ],
+                (object) [
+                    'logo'=> 'f174/assets/images/logos/conteflex.png',
+                    'link'=> 'http://www.conteflex.com.br/'
+                ],
+                (object) [
+                    'logo'=> 'https://imgplaceholder.com/200x200/transparent?text=Hotelaria_br_Casa do Chef',
+                    'link'=> 'javascript://'
+                ],
+                (object) [
+                    'logo'=> 'https://imgplaceholder.com/200x200/transparent?text=Anderson Xavier',
+                    'link'=> 'javascript://'
+                ],
+                (object) [
+                    'logo'=> 'https://imgplaceholder.com/200x200/transparent?text=VM Lux_br_Representações',
+                    'link'=> 'javascript://'
+                ],
             ];
             
             ?>
